@@ -1,0 +1,61 @@
+
+$logoColor: #f2f2f2;
+$navColor: #f2f2f2;
+$headerBgColor: #0a0a0a;
+.header {
+  width: 100%;
+  color: $logoColor;
+  background-color: $headerBgColor;
+//    vertical-align: middle;
+  &__logo {
+    float: left;
+//    width: 50%;
+    font-size: 2em;
+    font-weight: normal;
+    font-family: 'Akaya Telivigala', cursive;
+    &__main {
+      display: inline-block;
+      padding: 0;
+      margin: 0px 160px 0px 15px;
+      text-align: center;
+      text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(#aaaaaa,0.15)
+    }
+    &__sub {
+      display: block;
+      font-size: 0.3em;
+      text-shadow: none;
+    }
+  }
+  .gnav {
+//    border: 4px solid white;
+//    display: inline;
+    a {
+      color: $navColor;
+      text-decoration: none;
+    }
+    &__list {
+      list-style: none;
+    }
+    &__item {
+      float: left;
+      margin-right: 20px;
+      padding: 0px;
+      color: aqua;
+    }
+    &__support {
+      float: right;
+    }
+  }
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

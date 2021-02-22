@@ -1,0 +1,53 @@
+/* line 5, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+.header {
+  width: 100%;
+  color: #f2f2f2;
+  background-color: #0a0a0a; }
+  /* line 10, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+  .header__logo {
+    float: left;
+    font-size: 2em;
+    font-weight: normal;
+    font-family: 'Akaya Telivigala', cursive; }
+    /* line 16, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+    .header__logo__main {
+      display: inline-block;
+      padding: 0;
+      margin: 0px 160px 0px 15px;
+      text-align: center;
+      text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(170, 170, 170, 0.15); }
+    /* line 23, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+    .header__logo__sub {
+      display: block;
+      font-size: 0.3em;
+      text-shadow: none; }
+  /* line 32, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+  .header .gnav a {
+    color: #f2f2f2;
+    text-decoration: none; }
+  /* line 36, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+  .header .gnav__list {
+    list-style: none; }
+  /* line 39, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+  .header .gnav__item {
+    float: left;
+    margin-right: 20px;
+    padding: 0px;
+    color: aqua; }
+  /* line 45, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+  .header .gnav__support {
+    float: right; }
+
+/* line 51, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0; }
+
+/* line 59, /Users/yuichi_nishi/Desktop/sasaki/css/index.scss */
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=index.css.map */
