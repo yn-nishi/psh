@@ -5,32 +5,68 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>断面研磨はPSH</title>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
-   
+		<!--google font-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+		<!--modules-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/anythingzoomer.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/jquery.anythingzoomer.js"></script>
+		<script>
+			$(function(){
+				$("#zoom").anythingZoomer();
+			});
+		</script>
+		<!--original-->
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <header class="header clearfix">
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+      <symbol viewBox="0 0 24 24" id="call-sym">
+         <title>電話</title>
+        <path d="M0 0h24v24h-24z" fill="none"/>
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </symbol>
+    </svg>
+
+    <header class="header">
       <div class="header__logo">
-        <p class="header__logo__main">PSH <span class="header__logo__sub">-Precision Hand-</span></p>
-        
-        
+        <p class="header__logo__text">
+          PSH
+          <span class="header__logo__text__sub">
+            -Precision Hand-
+          </span>
+        </p>
       </div>
-      <nav class="gnav">
-        <ul class="gnav__list">
-          <li class="gnav__item"><a href="#">断面写真</a></li>
-          <li class="gnav__item"><a href="#">製作工程</a></li>
-          <li class="gnav__item"><a href="#">ご納品までの流れ</a></li>
+      <nav class="gnav__menu">
+        <ul class="gnav__menu__list">
+          <li class="gnav__menu__item"><a href="#">断面写真</a></li>
+          <li class="gnav__menu__item"><a href="#">製作工程</a></li>
+          <li class="gnav__menu__item"><a href="#">ご納品までの流れ</a></li>
         </ul>
       </nav>
+      <nav class="gnav__call">
+        <a href="tel:05058915459" class="gnav__call__text">
+					050-5891-5459
+        </a>
+      </nav>
+      <nav class="gnav__mail">
+        <a href="" class="gnav__mail__link"></a>
+      </nav>
+      
 <!--
       <nav class="gnav__support">
-        <ul class="gnav__list">
-          <li class="gnav__item__tel">
-            <div><a href="tel:05058915459">050-5891-5459</a></div>
+        <ul class="gnav__support__list">
+          <li class="gnav__support__item tel">
+            <svg class="sym"><use href="#call-sym"></use></svg>
+            <a href="tel:05058915459">050-5891-5459</a>
           </li>
-          <li class="gnav__item__contact"><p>お問い合わせ</p></li>
+          <li class="gnav__support__item inquiry">
+            <p>
+              お問い合わせ
+            </p>
+          </li>
         </ul>
       </nav>
 -->
@@ -38,27 +74,59 @@
     <main>
       <section class="kv">
         <div class="kv__wrapper">
+            <h1 class="kv__copy">どこよりも<br>綺麗な断面で<br>観察・測定</h1>
           <div class="kv__wrapper__inner">
-            <h1 class="kv__copy">どこよりも綺麗な断面で<br>観察・測定</h1>
-            <img src="./images/top.png" alt="断面試料写真" class="kv__image">
           </div>
         </div>
+<!--        <div class="scroll"></div>-->
       </section>
       <section class="ex" id="ex">
-        <div class="ex__wrapper">
-         <h2 class="ex__title">断面写真一例</h2>
-          <div class="ex__box">
-          <img src="./images/cs01.png" alt="サンプル写真1" class="ex__box__image">
-            <div class="ex__box__description">
-            <p>これは説明文です。これは説明文です。これは説明文です。</p>
-            </div>
-          </div>
+<!--        <div class="scroll"></div>-->
+       <h2 class="section__title">断面写真一例</h2>
+       <div class="ex__box__wrapper">
+        <div class="ex__box">
+        	<div id="zoom">
+          <div class="small">
+          	<img src="../images/cs01.png" alt="クロスセクション1" class="ex__box__image">
+					</div>
+      		<div class="large">
+      			<img src="../images/cs01.png" alt="">
+					</div>
+					</div>
         </div>
+          <p class="ex__box__description">USB 3.0micro コネクターの嵌合断面観察</p>
+        <div class="ex__box">
+          <div><img src="../images/cs02.png" alt="クロスセクション2" class="ex__box__image"></div>
+          <p class="ex__box__description">電線への圧接状態観察</p>
+        </div>
+        <div class="ex__box">
+          <div><img src="../images/cs03.png" alt="クロスセクション3" class="ex__box__image"></div>
+          <p class="ex__box__description">FFCコネクターの嵌合断面観察</p>
+        </div>
+        <div class="ex__box">
+          <div><img src="../images/cs04.png" alt="クロスセクション4" class="ex__box__image"></div>
+          <p class="ex__box__description">FFCと端子の接触状態観察</p>
+        </div>
+        <div class="ex__box">
+          <div><img src="../images/cs05.png" alt="クロスセクション5" class="ex__box__image"></div>
+          <p class="ex__box__description">芯線圧着観察</p>
+        </div>
+        <div class="ex__box">
+          <div><img src="../images/cs06.png" alt="クロスセクション6" class="ex__box__image"></div>
+          <p class="ex__box__description">プローブピン内部構造観察</p>
+        </div>
+        <div class="ex__box">
+          <div><img src="../images/cs07.png" alt="クロスセクション7" class="ex__box__image"></div>
+          <p class="ex__box__description">金属バリの観察</p>
+        </div>
+       </div>
+<!--        </div>-->
       </section>
       <section class="flow" id="flow">
+        <h2>ご納品までの流れ</h2>
         <div class="flow__wrapper">
           <div class="flow__wrapper__inner">
-            <h2 class="flow__title">ご納品までの流れ</h2>
+          
           </div>
         </div>
       </section>
