@@ -5,21 +5,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>断面研磨はPSH</title>
-		<!--google font-->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
-		<!--modules-->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/anythingzoomer.css">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/jquery.anythingzoomer.js"></script>
-		<script>
-			$(function(){
-				$("#zoom").anythingZoomer();
-			});
-		</script>
-		<!--original-->
+<!--    <link rel="stylesheet" href="css/anythingzoomer.css">-->
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" display="none">
@@ -43,7 +34,7 @@
         <ul class="gnav__menu__list">
           <li class="gnav__menu__item"><a href="#">断面写真</a></li>
           <li class="gnav__menu__item"><a href="#">製作工程</a></li>
-          <li class="gnav__menu__item"><a href="#">ご納品までの流れ</a></li>
+          <li class="gnav__menu__item"><a href="#">ご利用方法</a></li>
         </ul>
       </nav>
       <nav class="gnav__call">
@@ -72,75 +63,200 @@
 -->
     </header>
     <main>
-      <section class="kv">
+      <section class="section kv">
         <div class="kv__wrapper">
-            <h1 class="kv__copy">どこよりも<br>綺麗な断面で<br>観察・測定</h1>
+            <h1 class="kv__copy">どこよりも<br>美しい仕上がりを</h1>
           <div class="kv__wrapper__inner">
           </div>
         </div>
-<!--        <div class="scroll"></div>-->
       </section>
-      <section class="ex" id="ex">
-<!--        <div class="scroll"></div>-->
-       <h2 class="section__title">断面写真一例</h2>
-       <div class="ex__box__wrapper">
-        <div class="ex__box">
-        	<div id="zoom">
-          <div class="small">
-          	<img src="../images/cs01.png" alt="クロスセクション1" class="ex__box__image">
+      
+      <section class="section process" id="process">
+      	<h2 class="section__title">製作工程</h2>
+    		<div class="process__box">
+					<div class="process__box__inner">
+						<h3>断面確認は何故必要？</h3>
+							<p>試料の断面確認（観察）は、非破壊検査だけでは解明できない課題に対し、不良解析や内部構造解析を把握する為には、試料の断面を観察することが非常に重要であります。</p>
 					</div>
-      		<div class="large">
-      			<img src="../images/cs01.png" alt="">
+				</div>
+    		<div class="process__box">
+  				<div class="process__box__inner">
+						<h3>樹脂埋め工程</h3>
+						<ul>
+							<li>試料を埋め込み用カップにセット。</li>
+							<li>常温硬化樹脂と硬化剤を調合し真空ポンプにて脱泡。</li>
+							<li>試料をセット済のカップに常温硬化樹脂を注ぎ込む。</li>
+							<li>資料をセットしたカップに脱泡済の樹脂を注ぎ込んだ後、真空ポンプで更に二次脱泡を行う。</li>
+							<li>二次脱泡後、常温で硬化。</li>
+						</ul>
 					</div>
+				</div>
+   			
+    		<div class="process__box">
+  				<div class="process__box__inner">
+						<h3>研磨工程</h3>
+						<p>耐水研磨紙、粗 ⇒ 中 ⇒ 細を使った手作業で水平な面出しを行った後、スエードクロスとアルミナ研磨剤を用い鏡面状態に仕上げます。</p>
 					</div>
-        </div>
-          <p class="ex__box__description">USB 3.0micro コネクターの嵌合断面観察</p>
-        <div class="ex__box">
-          <div><img src="../images/cs02.png" alt="クロスセクション2" class="ex__box__image"></div>
-          <p class="ex__box__description">電線への圧接状態観察</p>
-        </div>
-        <div class="ex__box">
-          <div><img src="../images/cs03.png" alt="クロスセクション3" class="ex__box__image"></div>
-          <p class="ex__box__description">FFCコネクターの嵌合断面観察</p>
-        </div>
-        <div class="ex__box">
-          <div><img src="../images/cs04.png" alt="クロスセクション4" class="ex__box__image"></div>
-          <p class="ex__box__description">FFCと端子の接触状態観察</p>
-        </div>
-        <div class="ex__box">
-          <div><img src="../images/cs05.png" alt="クロスセクション5" class="ex__box__image"></div>
-          <p class="ex__box__description">芯線圧着観察</p>
-        </div>
-        <div class="ex__box">
-          <div><img src="../images/cs06.png" alt="クロスセクション6" class="ex__box__image"></div>
-          <p class="ex__box__description">プローブピン内部構造観察</p>
-        </div>
-        <div class="ex__box">
-          <div><img src="../images/cs07.png" alt="クロスセクション7" class="ex__box__image"></div>
-          <p class="ex__box__description">金属バリの観察</p>
-        </div>
-       </div>
-<!--        </div>-->
+				</div>
+    			<div class="process__box">
+						<div class="process__box__inner">
+						<h3>観察・測定</h3>
+							<p>表面実装（SMT）の観察、金属間化合物の状況や結晶粒の形状、ウィスカやバリ、樹脂の流動性、コネクタの嵌合接触状態等、様々な解析技術をご用意しております。</p>
+						</div>
+					</div>
       </section>
+      
+      
       <section class="flow" id="flow">
-        <h2>ご納品までの流れ</h2>
+        <h2 class="section__title">ご利用の流れ</h2>
         <div class="flow__wrapper">
-          <div class="flow__wrapper__inner">
-          
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title">
+								<span class="flow__textbox__num">01</span>
+								メールフォーム記入
+							</h3>
+							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow01.svg" alt="フロー1">
+          </div>
+        </div>
+        <div class="flow__wrapper">
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title">
+								<span class="flow__textbox__num">02</span>
+								お電話でのご確認
+							</h3>
+							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow02.svg" alt="フロー2">
+          </div>
+        </div>
+        <div class="flow__wrapper">
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title">
+								<span class="flow__textbox__num">03</span>
+								ご納品
+							</h3>
+							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow03.svg" alt="フロー3">
           </div>
         </div>
       </section>
-      <section class="process" id="process">
-        <div class="process__wrapper">
-          <div class="process__wrapper__inner">
-            <h2 class="process__title">樹脂埋めから断面研磨の工程</h2>
-          </div>
-        </div>
+      
+      <section class="section ex" id="ex">
+      <h2 class="section__title">断面写真一例</h2>
+      
+      	<div class="ex__box__wrapper">
+					<div class="ex__box">
+						<img src="./images/cs01.png" alt="クロスセクション1" class="ex__box__image">
+						<p class="ex__box__description">USB 3.0micro コネクターの<br>嵌合断面観察</p>
+					</div>
+        	<div class="ex__box">
+          	<img src="./images/cs02.png" alt="クロスセクション2" class="ex__box__image">
+  	        <p class="ex__box__description">電線への圧接状態観察</p>
+	        </div>
+				</div>
+				
+      	<div class="ex__box__wrapper">
+					<div class="ex__box">
+						<img src="./images/cs03.png" alt="クロスセクション3" class="ex__box__image">
+						<p class="ex__box__description">FFCコネクターの嵌合断面観察</p>
+					</div>
+					<div class="ex__box" id="zoom4">
+						<img src="./images/cs04.png" alt="クロスセクション4" class="ex__box__image">
+						<p class="ex__box__description">FFCと端子の接触状態観察</p>
+					</div>
+				</div>
+				
+      	<div class="ex__box__wrapper">
+					<div class="ex__box" id="zoom5">
+						<img src="./images/cs05.png" alt="クロスセクション5" class="ex__box__image">
+						<p class="ex__box__description">芯線圧着観察</p>
+					</div>
+					<div class="ex__box" id="zoom6">
+						<img src="./images/cs06.png" alt="クロスセクション6" class="ex__box__image">
+						<p class="ex__box__description">プローブピン内部構造観察</p>
+					</div>
+				</div>
+				
+      	<div class="ex__box__wrapper">
+					<div class="ex__box" id="zoom7">
+						<img src="./images/cs07.png" alt="クロスセクション7" class="ex__box__image">
+						<p class="ex__box__description">金属バリの観察</p>
+					</div>
+			</div>
       </section>
+      
+      <section class="contact">
+      	<!-- class, action, methodを変更しないでください -->
+<form class="formrun" action="https://form.run/api/v1/r/5bjgbc1onv8caxgm8mudlyd4" method="post">
+  <!-- ↓自由に要素を追加・編集することができます -->
+  <div>
+    <label>お名前 [必須]</label>
+    <input name="お名前" type="text" data-formrun-required>
+  </div>
+
+  <div>
+    <label>メールアドレス [必須]</label>
+    <input name="メールアドレス" type="text" data-formrun-type="email" data-formrun-required>
+    <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
+  </div>
+
+
+  <div>
+    <label>メールアドレス [必須]</label>
+    <input type="text" name="電話番号" data-formrun-type="tel">
+    <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
+  </div>
+
+
+
+
+  <div>
+    <label>お問い合わせ内容 [必須]</label>
+    <textarea name="お問い合わせ" data-formrun-required></textarea>
+    <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
+  </div>
+
+  <div>
+    <label>個人情報利用同意 [必須]</label>
+    <input type="checkbox" name="個人情報利用同意" data-formrun-required>
+    <div data-formrun-show-if-error="個人情報利用同意">同意してください</div>
+  </div>
+
+  <!-- ボット投稿をブロックするためのタグ -->
+  <div class="_formrun_gotcha">
+    <style media="screen">._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}</style>
+    <label for="_formrun_gotcha">If you are a human, ignore this field</label>
+    <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
+  </div>
+
+  <button type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+</form>
+
+      </section>
+      
+      
     </main>
+    
     <footer>
 
     </footer>
-    <script src="js/main.js"></script>
+    
+<!--
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/jquery.anythingzoomer.js"></script>
+		<script src="js/index.js"></script>
+-->
   </body>
 </html>

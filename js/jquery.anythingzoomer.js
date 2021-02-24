@@ -384,7 +384,7 @@
 		// appearance
 		overlay     : false,      // set to true to apply overlay class "az-overlay"; false to not apply it
 		speed       : 100,        // fade animation speed (in milliseconds)
-		edge        : 30,         // How far outside the wrapped edges the mouse can go; previously called "expansionSize"
+		edge        : 15,         // How far outside the wrapped edges the mouse can go; previously called "expansionSize"
 		offsetX     : 0,          // adjust the horizontal position of the large content inside the zoom window as desired
 		offsetY     : 0,          // adjust the vertical position of the large content inside the zoom window as desired
 		// functionality

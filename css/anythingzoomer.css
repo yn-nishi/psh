@@ -8,14 +8,14 @@
 }
 /* This wraps the large image and hides it */
 .az-zoom {
-	background: #fff;
-	border: #333 1px solid;
+	background: #0a0a0a;
+	border: #aaa 2px solid;
 	border-radius: 50%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 110px;
-	height: 110px;
+	width: 150px;
+	height: 150px;
 	overflow: hidden;
 	z-index: 100;
 	display: none;

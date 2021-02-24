@@ -1,10 +1,12 @@
 
 // --------------------------------
-// variable
+// variables
 // --------------------------------
 @charset "UTF-8";
 $white: #f2f2f2;
 $black: #0a0a0a;
+$yellow: #ebd842;
+$fontNomal: 1rem;
 $logoColor: $white;
 $navColor: $white;
 $headerBgColor: $black;
@@ -12,6 +14,12 @@ $headerBgColor: $black;
 /* --------------------------------
  * standards
  * -------------------------------- */
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -21,12 +29,6 @@ $headerBgColor: $black;
   display: block;
   visibility: hidden;
   height: 0;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  width: 100%;
 }
 /* --------------------------------
  * header nav
@@ -94,10 +96,20 @@ body {
   }
 }
 
+.section {
+	padding: 10rem 0;
+	&__title {
+    font-size: 3rem;
+    text-align: center;
+    padding: 10rem;
+  }
+}
+
 /* --------------------------------
  * keynote view
  * -------------------------------- */
 .kv {
+	padding: 0;
   &__copy {
     position: absolute;
     left: 20rem;
@@ -105,6 +117,7 @@ body {
     font-size: 3rem;
     color: $black;
     z-index: 1;
+		text-align: center;
   }
   &__wrapper {
     max-width: 100%;
@@ -122,35 +135,143 @@ body {
 }
 
 /* --------------------------------
+ * process
+ * -------------------------------- */
+.process {
+	background-color: $black;
+	color: $white;
+	font-size: 1.5rem;
+	
+	&__box {
+//      border: 3px solid lightgreen;
+		position: relative;
+		max-width:50%;
+		margin: 5rem auto 0;
+		
+		&__inner {
+			padding: 1em;
+		}
+		
+		&:before,	&:after {
+			content: "";
+			width: 4em;
+			height: 4em;
+			position: absolute;
+		}
+		
+		&::before {
+			border-top: 2px solid $yellow;
+			border-left: 2px solid $yellow;
+		}
+		
+		&::after {
+			border-bottom: 2px solid $yellow;
+			border-right: 2px solid $yellow;
+			right: 0;
+			bottom: 0;
+		}
+		
+		& h3 {
+			font-size: 2rem;
+			margin: 0 0 .5em;
+		}
+		
+		& h3:first-letter {
+			font-size: 2.5rem;
+			color: $yellow;
+		}
+	}
+}
+
+
+/* --------------------------------
+ * flow
+ * -------------------------------- */
+.flow {
+	background-color: $white;
+	font-size: 1.5rem;
+	
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		
+		&>* {
+			flex-basis: 30%;
+			margin: 5rem 1rem;
+//			padding: 5rem;
+		}
+		
+		&:nth-of-type(even)>.flow__imagebox {
+			order: -1;
+		}
+	}
+	
+	&__textbox {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		&__inner {
+		padding: 2em;
+		background-color: #fff;
+		border-radius: 8%;
+		}
+		
+		&__num {
+			font-weight: bold;
+		}
+		
+		&__description {
+//      border: 2px solid lightgreen;
+			margin-top: 3rem;
+//			white-space: nowrap;
+		}
+		
+		&__title {
+			padding: 0.1rem;
+			font-size: 1.5rem;
+			font-weight: normal;
+			background: linear-gradient(to right, $yellow 0%, transparent 80%);
+		}
+		
+	}
+	&__imagebox {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+/* --------------------------------
  * cross section pictures
  * -------------------------------- */
 .ex {
-  background-color: #aaa;
+  background-color: #000;
   color: $white;
-  h2 {
-    font-size: 3rem;
-    text-align: center;
-    padding: 3rem;
-  }
   &__box {
-      margin: 3rem;
-      width: 35%;
-//      border: 1px solid lightgreen;
+      margin: 5rem 0;
+      width: 20%;
+//      border: 3px solid lightgreen;
 //    &:last-of-type {
 //      margin-right: auto;
 //    }
-    &__image {
-    max-width: 100%;
-    max-height: 100%;
-    }
     &__wrapper {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
+			padding: 1px;
+//      border: 3px solid lightgreen;
+    }
+    &__image {
+    max-width: 100%;
+    max-height: 100%;
     }
     &__description {
+//      border: 3px solid lightgreen;
       font-size: 1.5rem;
       padding-top: 2rem;
+//			margin: 1rem;
       text-align: center;
     }
   }
