@@ -9,10 +9,6 @@ html {
 body {
   width: 100%; }
 
-/* line 23, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-*, *::before, *::after {
-  box-sizing: border-box; }
-
 /* line 26, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .clearfix::after {
   content: '';
