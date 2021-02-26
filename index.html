@@ -34,7 +34,7 @@
         <ul class="gnav__menu__list">
           <li class="gnav__menu__item"><a href="#">断面写真</a></li>
           <li class="gnav__menu__item"><a href="#">製作工程</a></li>
-          <li class="gnav__menu__item"><a href="#">ご利用方法</a></li>
+          <li class="gnav__menu__item"><a href="#">ご依頼の流れ</a></li>
         </ul>
       </nav>
       <nav class="gnav__call">
@@ -108,7 +108,7 @@
       
       
       <section class="flow" id="flow">
-        <h2 class="section__title">ご利用の流れ</h2>
+        <h2 class="section__title">ご依頼の流れ</h2>
         <div class="flow__wrapper">
           <div class="flow__textbox">
 						<div class="flow__textbox__inner">
@@ -199,12 +199,115 @@
       
       <section class="section contact">
 	      <h2 class="section__title">お問い合わせ</h2>
+	      
+	      <div class="contact__form">
+	      	<div class="div1">
+						<label for="clientName">お名前</label>
+						<div class="contact__form__input" name="名前" id="clientName" contentEditable="true">aa</div>
+      			<label for="clientEmail">メールアドレス</label>
+      			<div class="contact__form__input" name="Email" id="clientEmail" contentEditable="true"></div>
+      			<label for="clientTel">電話番号</label>
+      			<div class="contact__form__input" name="電話番号" id="clientTel" contentEditable="true"></div>
+						<label for="clientCompany">会社名</label>
+						<div class="contact__form__input" name="会社名" id="clientCompany" contentEditable="true"></div>
+					</div>
+					<div class="div2">
+						<label for="clientComment">お問い合わせ内容</label>
+						<div class="contact__form__input comment" name="メール内容" id="clientComment" contentEditable="true"></div>
+						
+      		</div>
+	      </div>
+	      <br><br>
+	      <button id="ajax">送信</div>
+	      
+				
+				
+				
 
-      <form method="post" action="https://ynyn.mixh.jp/cgi/mail_psh/mail.php">
+             
+              
+      
+        
+      </section>
+       
+       
+<!--
+      <section class="section contact">
+	      <h2 class="section__title">お問い合わせ</h2>
+        <div class="table">
+          <div class="row">
+            <div class="contact__itemName cell">
+              <label for="clientName">お名前</label>
+						</div>
+            <div class="cell required">
+            	<span>必須</span>
+						</div>
+            <div class="cell">
+              <div class="inputText" name="名前" id="clientName" contentEditable="true">inputarea</div>
+              <div class="errMsgName">error message</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact__itemName cell">
+              <label>メールアドレス</label>
+						</div>
+            <div class="cell required">
+            	<span>必須</span>
+						</div>
+            <div class="cell">
+              <div class="inputText" name="Email" id="clientEmail" contentEditable="true">inpu@ta.rea</div>
+              <div class="errMsg">error message</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact__itemName cell">
+              <label>電話番号</label>
+						</div>
+            <div class="cell required">
+            	<span>必須</span>
+						</div>
+            <div class="cell">
+              <div class="inputText" name="電話番号" id="clientTel" contentEditable="true">inputarea</div>
+              <div class="errMsg">error message</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact__itemName cell">
+              <label>会社名</label>
+						</div>
+            <div class="cell required">
+						</div>
+            <div class="cell">
+              <div class="inputText" name="会社名" id="clientCompany" contentEditable="true">inputarea</div>
+              <div class="errMsg">error message</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact__itemName cell">
+              <label>お問い合わせ内容</label>
+						</div>
+            <div class="cell required">
+            	<span>必須</span>
+						</div>
+            <div class="cell">
+              <div class="inputText" name="メール内容" id="clientComment" contentEditable="true">inputarea</div>
+              <div class="errMsg">error message</div>
+            </div>
+          </div>
+        </div>
+        
+    <p id="aja">
+      送信
+    </p>
+        
+      </section>
+-->
+        
+<!--
     <table class="formTable">
       <tr>
         <th>お名前</th>
-        <td><input size="20" type="text" name="名前" id="clientName"> ※必須</td>
+        <td><input size="20" type="text" name="名前"> ※必須</td>
       </tr>
       <tr>
         <th>Mail（半角）</th>
@@ -223,12 +326,8 @@
         <td><textarea name="メール内容" cols="50" rows="5" id="clientComment"></textarea></td>
       </tr>
     </table>
-    <p align="center" id="aja">
-      <input type="submit" value="確認" />
-    </p>
-  </form>
+-->
 
-      </section>
       
       
     </main>
@@ -242,6 +341,7 @@
 		<script src="js/index.js"></script>
   </body>
 </html>
+
 
 
 

@@ -6,7 +6,10 @@
 $white: #f2f2f2;
 $black: #0a0a0a;
 $yellow: #ebd842;
-$fontNomal: 1rem;
+$m: 1.0rem;
+$l: 1.3rem;
+$ll: 2.0rem;
+$x: 4.0rem;
 $logoColor: $white;
 $navColor: $white;
 $headerBgColor: $black;
@@ -14,15 +17,12 @@ $headerBgColor: $black;
 /* --------------------------------
  * standards
  * -------------------------------- */
-html {
-  font-size: 62.5%;
-}
 body {
   width: 100%;
 }
-//*, *::before, *::after {
-//  box-sizing: border-box;
-//}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 .clearfix::after {
   content: '';
   clear: both;
@@ -42,7 +42,7 @@ body {
   background-color: #aaaaaa;
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: $m;
   &__logo {
   padding: 5px;
   margin-right: 10rem;
@@ -97,11 +97,11 @@ body {
 }
 
 .section {
-	padding: 10rem 0;
+	padding: $x 0;
 	&__title {
-    font-size: 3rem;
+    font-size: $ll;
     text-align: center;
-    padding: 10rem;
+    padding: $x;
   }
 }
 
@@ -112,9 +112,9 @@ body {
 	padding: 0;
   &__copy {
     position: absolute;
-    left: 20rem;
-    top: 30rem;
-    font-size: 3rem;
+    left: 10rem;
+    top: 20rem;
+    font-size: $ll;
     color: $black;
     z-index: 1;
 		text-align: center;
@@ -140,13 +140,12 @@ body {
 .process {
 	background-color: $black;
 	color: $white;
-	font-size: 1.5rem;
 	
 	&__box {
 //      border: 3px solid lightgreen;
 		position: relative;
-		max-width:50%;
-		margin: 5rem auto 0;
+		max-width:40%;
+		margin: 3rem auto 0;
 		
 		&__inner {
 			padding: 1em;
@@ -154,30 +153,30 @@ body {
 		
 		&:before,	&:after {
 			content: "";
-			width: 4em;
-			height: 4em;
+			width: 3em;
+			height: 3em;
 			position: absolute;
 		}
 		
 		&::before {
-			border-top: 2px solid $yellow;
-			border-left: 2px solid $yellow;
+			border-top: 1px solid $yellow;
+			border-left: 1px solid $yellow;
 		}
 		
 		&::after {
-			border-bottom: 2px solid $yellow;
-			border-right: 2px solid $yellow;
+			border-bottom: 1px solid $yellow;
+			border-right: 1px solid $yellow;
 			right: 0;
 			bottom: 0;
 		}
 		
 		& h3 {
-			font-size: 2rem;
+			font-size: $l;
 			margin: 0 0 .5em;
 		}
 		
 		& h3:first-letter {
-			font-size: 2.5rem;
+			font-size: $l * 1.2;
 			color: $yellow;
 		}
 	}
@@ -189,17 +188,14 @@ body {
  * -------------------------------- */
 .flow {
 	background-color: $white;
-	font-size: 1.5rem;
 	
 	&__wrapper {
 		display: flex;
 		justify-content: center;
-		align-items: stretch;
 		
 		&>* {
 			flex-basis: 30%;
-			margin: 5rem 1rem;
-//			padding: 5rem;
+			margin: 2rem 1rem;
 		}
 		
 		&:nth-of-type(even)>.flow__imagebox {
@@ -213,26 +209,28 @@ body {
 		justify-content: center;
 		
 		&__inner {
-		padding: 2em;
+		padding: 1.5em;
 		background-color: #fff;
-		border-radius: 8%;
+		border-radius: 10px;
 		}
 		
 		&__num {
 			font-weight: bold;
+			font-size: $l;
 		}
 		
 		&__description {
 //      border: 2px solid lightgreen;
-			margin-top: 3rem;
+			margin-top: 1rem;
 //			white-space: nowrap;
 		}
 		
 		&__title {
 			padding: 0.1rem;
-			font-size: 1.5rem;
+//			font-size: $;
 			font-weight: normal;
-			background: linear-gradient(to right, $yellow 0%, transparent 80%);
+			background: linear-gradient(to right, $yellow 0%, rgba($yellow, 0.3) 20%, transparent 80%);
+			border-radius: 5px;
 		}
 		
 	}
@@ -269,13 +267,66 @@ body {
     }
     &__description {
 //      border: 3px solid lightgreen;
-      font-size: 1.5rem;
       padding-top: 2rem;
 //			margin: 1rem;
       text-align: center;
     }
   }
 }
+
+
+/* --------------------------------
+ * contact
+ * -------------------------------- */
+.contact{
+	background-color: $white;
+	
+	&__form {
+		margin: 0 auto;
+		width: 70%;
+		display: flex;
+		justify-content: center;
+		
+		> div {
+      border: 1px solid lightgreen;
+			&:first-of-type {
+			margin-right: 5%;
+			width: 25%;
+			}
+			&:last-of-type {
+			width: 40%;
+			}
+		}
+		
+		label {
+			display: block;
+			margin: 2rem 0 0.5rem 0;
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+		
+		&__input {
+//			margin: 0.5rem 0 2rem;
+			padding: 0.5rem;
+			border: 1px solid #aaa;
+			border-radius: 5px;
+			background-color: #fff;
+			
+			&.comment{
+				height: 19rem;
+				overflow-y: auto;
+			}	
+		}
+	}
+}
+#ajax {
+//	text-align: center;
+	
+	color: red;
+}
+
+
 /* --------------------------------
  * parts
  * -------------------------------- */

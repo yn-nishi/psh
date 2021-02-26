@@ -1,13 +1,15 @@
 $(function(){
 
-	console.log($('#aja'));
-	$('#aja').click(() => {
+	// $('#clientName').after('<p>ああああああ</p>');
+
+	$('#ajax').click(() => {
+
 		const formData = {
-			'名前' : $('#clientName').val(),
-			'Email' : $('#clientEmail').val(),
-			'電話番号' : $('#clientTel').val(),
-			'会社名' : $('#clientCompany').val(),
-			'メール内容' : $('#clientComment').val(),
+			'名前' : $('#clientName').text(),
+			'Email' : $('#clientEmail').text(),
+			'電話番号' : $('#clientTel').text(),
+			'会社名' : $('#clientCompany').text(),
+			'メール内容' : $('#clientComment').text(),
 		}
 		console.log(formData);
 		$.ajax({
