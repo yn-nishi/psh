@@ -1,4 +1,3 @@
-
 // --------------------------------
 // variables
 // --------------------------------
@@ -8,17 +7,32 @@ $black: #0a0a0a;
 $yellow: #ebd842;
 $m: 1.0rem;
 $l: 1.3rem;
-$ll: 2.0rem;
+$ll: 1.8rem;
 $x: 4.0rem;
 $logoColor: $white;
 $navColor: $white;
-$headerBgColor: $black;
+$headerBgColor: rgba($black, 0.8);
+$headerBgColor2: rgba($white, 0.2);
 
 /* --------------------------------
- * standards
+ * base
  * -------------------------------- */
+
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+	src: url('../fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+	/* SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 http://scripts.sil.org/OFL */
+}
+
+@font-face {
+  font-family: 'Akaya Telivigala';
+	src: url('../fonts/AkayaTelivigala-Regular.ttf') format('truetype');
+	/* Copyright 2015 The Akaya Telivigala Project Authors (https://github.com/vaishnavimurthy/Akaya-Telivigala) */
+}
+
 body {
   width: 100%;
+	letter-spacing : 1px;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -30,6 +44,7 @@ body {
   visibility: hidden;
   height: 0;
 }
+
 /* --------------------------------
  * header nav
  * -------------------------------- */
@@ -39,59 +54,95 @@ body {
   width: 100%;
   color: $logoColor;
   background-color: $headerBgColor;
-  background-color: #aaaaaa;
   display: flex;
   align-items: center;
-  font-size: $m;
+	justify-content: space-between;
+	
+		&.scroll {
+		background-color: $headerBgColor2;
+		}
+	
+	
+	a {
+		color: $navColor;
+		text-decoration: none;
+	}
+	
   &__logo {
-  padding: 5px;
-  margin-right: 10rem;
-  margin-left: 1rem;
-    font-size: 3rem;
+		padding: 5px;
+		margin-left: 1rem;
+    font-size: $ll;
     font-weight: normal;
     font-family: 'Akaya Telivigala', cursive;
-    &__text {
-      text-align: center;
-      text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(#aaaaaa,0.15);
-      &__sub {
-        margin: 0;
-        padding: 0;
-        display: block;
-        font-size: 1.2rem;
-        vertical-align: top;
-        text-shadow: none;
-        text-align: center;
-      }
-    }
+		text-align: center;
+		text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(#aaaaaa,0.15);
+
+		&__sub {
+			margin: 0;
+			padding: 0;
+			display: block;
+			vertical-align: top;
+			text-shadow: none;
+			text-align: center;
+			font-size: $m * 0.8;
+			letter-spacing: normal;
+		}
   }
+	
   .gnav {
-    &__menu {
-//      display: inline-block;
-//      line-height: 1;
-//      border: 1px solid lightgreen;
-      a {
-        color: $navColor;
-        text-decoration: none;
-      }
-      &__list {
-//      list-style: none;
-      }
-      &__item {
-      float: left;
-      margin-right: 20px;
-      padding: 0px;
-//      font-size: 1.5rem;
-      letter-spacing: 1px;
-      }
-    }
+		&__image {
+			stroke: $white;
+			width: $m;
+			height: $m;
+		}
+		
+		&__menu__item {
+			float: left;
+			margin-right: $m;
+			padding: 0px;
+			font-family: 'M PLUS Rounded 1c', sans-serif;
+			
+			&:last-of-type {
+				margin-right: 0;
+			}
+			
+			& a {
+				position: relative;
+//				vertical-align: middle;
+//				line-height: 100%;
+				display: flex;
+				align-items: center;
+//				justify-content: center;
+				
+				&::after {
+					position: absolute;
+					left: 50%;
+					bottom: -4px;
+					content: '';
+					width: 0;
+					height: 1px;
+					background-color: $yellow;
+					transition: width 0.3s ease-in;
+					transform: translateX(-50%)
+				}
+				
+				&:hover {
+				
+					&::after {
+						width: 100%;
+					}
+					
+					&:hover .sym {
+						stroke: $yellow;
+						stroke-width: 3;
+					}
+				}
+			}
+		}
+		
     &__support {
-//      border: 1px solid lightgreen;
-//      display: inline-block;
-      font-size: 1.5rem;
-      &__item {
-//      font-size: 1.5rem;
-        float: left;
-      }
+			margin-right: 2rem;
+			pointer-events: none;
     }
   }
 }
@@ -134,6 +185,42 @@ body {
   }
 }
 
+
+/* --------------------------------
+ * cross section pictures
+ * -------------------------------- */
+.ex {
+  background-color: #000;
+  color: $white;
+  &__box {
+      margin: 5rem 0;
+      width: 20%;
+//      border: 3px solid lightgreen;
+//    &:last-of-type {
+//      margin-right: auto;
+//    }
+    &__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+			padding: 1px;
+//      border: 3px solid lightgreen;
+    }
+    &__image {
+    max-width: 100%;
+    max-height: 100%;
+    }
+    &__description {
+//      border: 3px solid lightgreen;
+      padding-top: 2rem;
+//			margin: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+
+
 /* --------------------------------
  * process
  * -------------------------------- */
@@ -148,7 +235,27 @@ body {
 		margin: 3rem auto 0;
 		
 		&__inner {
-			padding: 1em;
+			padding: $m;
+			line-height: 1.5;
+			
+			li {
+				margin-left: 1.1rem;
+				color: $yellow;
+				
+				span {
+					color: $white;
+				}
+			}
+		}
+		
+		& h3 {
+			font-size: $l;
+			margin: 0 0 .5em;
+		}
+		
+		& h3:first-letter {
+			font-size: $l * 1.2;
+			color: $yellow;
 		}
 		
 		&:before,	&:after {
@@ -168,16 +275,6 @@ body {
 			border-right: 1px solid $yellow;
 			right: 0;
 			bottom: 0;
-		}
-		
-		& h3 {
-			font-size: $l;
-			margin: 0 0 .5em;
-		}
-		
-		& h3:first-letter {
-			font-size: $l * 1.2;
-			color: $yellow;
 		}
 	}
 }
@@ -217,18 +314,19 @@ body {
 		&__num {
 			font-weight: bold;
 			font-size: $l;
+			margin-right: 0.5rem;
 		}
 		
 		&__description {
 //      border: 2px solid lightgreen;
-			margin-top: 1rem;
+			margin-top: $m;
+			line-height: 1.5;
 //			white-space: nowrap;
 		}
 		
 		&__title {
 			padding: 0.1rem;
-//			font-size: $;
-			font-weight: normal;
+			font-weight: bold;
 			background: linear-gradient(to right, $yellow 0%, rgba($yellow, 0.3) 20%, transparent 80%);
 			border-radius: 5px;
 		}
@@ -242,45 +340,27 @@ body {
 }
 
 /* --------------------------------
- * cross section pictures
- * -------------------------------- */
-.ex {
-  background-color: #000;
-  color: $white;
-  &__box {
-      margin: 5rem 0;
-      width: 20%;
-//      border: 3px solid lightgreen;
-//    &:last-of-type {
-//      margin-right: auto;
-//    }
-    &__wrapper {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-			padding: 1px;
-//      border: 3px solid lightgreen;
-    }
-    &__image {
-    max-width: 100%;
-    max-height: 100%;
-    }
-    &__description {
-//      border: 3px solid lightgreen;
-      padding-top: 2rem;
-//			margin: 1rem;
-      text-align: center;
-    }
-  }
-}
-
-
-/* --------------------------------
  * contact
  * -------------------------------- */
 .contact{
 	background-color: $white;
-	
+	&__info {
+		text-align: center;
+	}
+	&__tel{
+		margin: 1rem 0 3rem 0;
+		font-size: $l;
+		font-weight: bold;
+		color: $yellow;
+	  text-shadow : 
+			1px  1px 0px $black,
+			-1px  1px 0px $black,
+			1px -1px 0px $black,
+			-1px -1px 0px $black,
+			1px  0px 0px $black,
+			0px  1px 0px $black,
+			-1px  0px 0px $black,
+	}
 	&__form {
 		margin: 0 auto;
 		width: 70%;
@@ -288,26 +368,41 @@ body {
 		justify-content: center;
 		
 		> div {
-      border: 1px solid lightgreen;
+			width: 35%;
 			&:first-of-type {
 			margin-right: 5%;
-			width: 25%;
 			}
-			&:last-of-type {
-			width: 40%;
-			}
+//			&:last-of-type {
+//			width: 35%;
+////			margin-left: 5%;
+//			}
 		}
 		
 		label {
+//      border: 1px solid lightgreen;
 			display: block;
 			margin: 2rem 0 0.5rem 0;
+//			line-height: 1;
+				
+				.required {
+					display: inline-block;
+					margin-left: 4px;
+					padding: 1px 4px;
+					background-color: $yellow;
+					border-radius: 5px;
+					color: $black;
+					font-size: $m * 0.7;
+					
+					&.not {
+						background-color: #ccc;
+					}
+				}
 			&:first-of-type {
 				margin-top: 0;
 			}
 		}
 		
 		&__input {
-//			margin: 0.5rem 0 2rem;
 			padding: 0.5rem;
 			border: 1px solid #aaa;
 			border-radius: 5px;
@@ -321,16 +416,43 @@ body {
 	}
 }
 #ajax {
-//	text-align: center;
-	
-	color: red;
+	display: block;
+	position: relative;
+	max-width: 5rem;
+	margin: 0 auto;
+	padding: 0.4rem;
+	text-align: center;
+	background-color: #eee;
+	cursor: pointer;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px $black;
+	&:hover {
+		background-color: $yellow;
+	}
+	&:active {
+		border: 1px solid $black;
+		top:2px;
+		box-shadow: unset;
+	}
 }
 
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+
+footer {
+	text-align: right;
+	padding: 1rem 4rem;
+	background-color: $black;
+	color: $white;
+	font-size: $m * 0.7;
+}
 
 /* --------------------------------
  * parts
  * -------------------------------- */
-.scroll{
+.scrollArrow{
   margin: 0 auto;
   background-color: transparent;
   width: 3rem;
@@ -339,14 +461,7 @@ body {
   border-color:  transparent transparent $black $black;
   transform: rotate(-45deg);
   animation: flash 3s linear infinite;
-}
-.white {
   border-color:  transparent transparent $white $white;
-}
-.sym {
-  width: 1.5rem;
-  height: 1rem;
-  fill: $white;
 }
 
 @keyframes flash {
@@ -360,3 +475,27 @@ body {
     opacity: 1;
   }
 }
+
+.sym {
+  width: 1rem;
+	height: 1rem;
+	stroke-width: 2;
+//	border: 1px solid white;
+//	display: inline;
+	
+	&.sym__black {
+		fill: $black;
+		stroke: $black;
+	}
+	
+	&.sym__white {
+		fill: $white;
+		stroke: $white;
+	}
+	
+	&.sym__yellow {
+		fill: $yellow;
+		stroke: $yellow;
+	}
+}
+

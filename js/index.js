@@ -2,6 +2,16 @@ $(function(){
 
 	// $('#clientName').after('<p>ああああああ</p>');
 
+	$(window).scroll(function () {
+		if ($(this).scrollTop() >= 650) {
+			// console.log($(this).scrollTop());
+			$('.header').addClass('scroll');
+		} else {
+			$('.header').removeClass('scroll');
+		}
+	});
+	
+
 	$('#ajax').click(() => {
 
 		const formData = {

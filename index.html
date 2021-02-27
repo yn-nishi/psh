@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>断面研磨はPSH</title>
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <title>断面研磨はPSH</title> 
     <link rel="stylesheet" href="css/reset.css">
 <!--    <link rel="stylesheet" href="css/anythingzoomer.css">-->
     <link rel="stylesheet" href="css/index.css">
@@ -14,144 +12,61 @@
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" display="none">
-      <symbol viewBox="0 0 24 24" id="call-sym">
+      <symbol viewBox="0 0 24 24" id="symCall">
          <title>電話</title>
-        <path d="M0 0h24v24h-24z" fill="none"/>
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
       </symbol>
     </svg>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+<!--      <symbol id="symPicture" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+      <symbol id="symPicture" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+         <title>写真</title>
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </symbol>
+    </svg>
+    
 
     <header class="header">
-      <div class="header__logo">
-        <p class="header__logo__text">
-          PSH
-          <span class="header__logo__text__sub">
-            -Precision Hand-
-          </span>
-        </p>
-      </div>
+			<a href="./">
+				<div class="header__logo">
+					<p>PSH<span class="header__logo__sub">-Precision Hand-</span></p>
+				</div>
+			</a>
       <nav class="gnav__menu">
         <ul class="gnav__menu__list">
-          <li class="gnav__menu__item"><a href="#">断面写真</a></li>
-          <li class="gnav__menu__item"><a href="#">製作工程</a></li>
-          <li class="gnav__menu__item"><a href="#">ご依頼の流れ</a></li>
+          <li class="gnav__menu__item clearfix"><a href="#"><svg class="sym sym__yellow"><use href="#symPicture"></use></svg>断面写真</a></li>
+          <li class="gnav__menu__item clearfix"><a href="#"><img src="./images/nav02_process.svg" alt="process" class="gnav__image">製作工程</a></li>
+          <li class="gnav__menu__item clearfix"><a href="#"><img src="./images/nav03_flow.svg" alt="flow" class="gnav__image">ご依頼の流れ</a></li>
+          <li class="gnav__menu__item clearfix"><a href="#"><img src="images/nav04_mail.svg" alt="mail" class="gnav__image">お問い合わせ</a></li>
         </ul>
       </nav>
-      <nav class="gnav__call">
-        <a href="tel:05058915459" class="gnav__call__text">
-					050-5891-5459
-        </a>
-      </nav>
-      <nav class="gnav__mail">
-        <a href="" class="gnav__mail__link"></a>
-      </nav>
       
-<!--
       <nav class="gnav__support">
-        <ul class="gnav__support__list">
-          <li class="gnav__support__item tel">
-            <svg class="sym"><use href="#call-sym"></use></svg>
-            <a href="tel:05058915459">050-5891-5459</a>
-          </li>
+<!--        <ul class="gnav__support__list">-->
+<!--          <li class="gnav__support__item tel">-->
+            <svg class="sym sym__yellow"><use href="#symCall"></use></svg><a href="tel:05058915459">050-5891-5459</a>
+<!--          </li>-->
+<!--
           <li class="gnav__support__item inquiry">
             <p>
               お問い合わせ
             </p>
           </li>
-        </ul>
-      </nav>
 -->
+<!--        </ul>-->
+      </nav>
     </header>
     <main>
       <section class="section kv">
         <div class="kv__wrapper">
-            <h1 class="kv__copy">どこよりも<br>美しい仕上がりを</h1>
+					<h1 class="kv__copy">どこよりも<br>美しい断面を</h1>
           <div class="kv__wrapper__inner">
           </div>
         </div>
       </section>
       
-      <section class="section process" id="process">
-      	<h2 class="section__title">製作工程</h2>
-    		<div class="process__box">
-					<div class="process__box__inner">
-						<h3>断面確認は何故必要？</h3>
-							<p>試料の断面確認（観察）は、非破壊検査だけでは解明できない課題に対し、不良解析や内部構造解析を把握する為には、試料の断面を観察することが非常に重要であります。</p>
-					</div>
-				</div>
-    		<div class="process__box">
-  				<div class="process__box__inner">
-						<h3>樹脂埋め工程</h3>
-						<ul>
-							<li>試料を埋め込み用カップにセット。</li>
-							<li>常温硬化樹脂と硬化剤を調合し真空ポンプにて脱泡。</li>
-							<li>試料をセット済のカップに常温硬化樹脂を注ぎ込む。</li>
-							<li>資料をセットしたカップに脱泡済の樹脂を注ぎ込んだ後、真空ポンプで更に二次脱泡を行う。</li>
-							<li>二次脱泡後、常温で硬化。</li>
-						</ul>
-					</div>
-				</div>
-   			
-    		<div class="process__box">
-  				<div class="process__box__inner">
-						<h3>研磨工程</h3>
-						<p>耐水研磨紙、粗 ⇒ 中 ⇒ 細を使った手作業で水平な面出しを行った後、スエードクロスとアルミナ研磨剤を用い鏡面状態に仕上げます。</p>
-					</div>
-				</div>
-    			<div class="process__box">
-						<div class="process__box__inner">
-						<h3>観察・測定</h3>
-							<p>表面実装（SMT）の観察、金属間化合物の状況や結晶粒の形状、ウィスカやバリ、樹脂の流動性、コネクタの嵌合接触状態等、様々な解析技術をご用意しております。</p>
-						</div>
-					</div>
-      </section>
-      
-      
-      <section class="flow" id="flow">
-        <h2 class="section__title">ご依頼の流れ</h2>
-        <div class="flow__wrapper">
-          <div class="flow__textbox">
-						<div class="flow__textbox__inner">
-							<h3 class="flow__textbox__title">
-								<span class="flow__textbox__num">01</span>
-								メールフォーム記入
-							</h3>
-							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
-						</div>
-					</div>
-          <div class="flow__imagebox">
-          	<img src="./images/flow01.svg" alt="フロー1">
-          </div>
-        </div>
-        <div class="flow__wrapper">
-          <div class="flow__textbox">
-						<div class="flow__textbox__inner">
-							<h3 class="flow__textbox__title">
-								<span class="flow__textbox__num">02</span>
-								お電話でのご確認
-							</h3>
-							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
-						</div>
-					</div>
-          <div class="flow__imagebox">
-          	<img src="./images/flow02.svg" alt="フロー2">
-          </div>
-        </div>
-        <div class="flow__wrapper">
-          <div class="flow__textbox">
-						<div class="flow__textbox__inner">
-							<h3 class="flow__textbox__title">
-								<span class="flow__textbox__num">03</span>
-								ご納品
-							</h3>
-							<p class="flow__textbox__description">ここに説明文。ここに説明文。<br>ここに説明文。ここに説明文<br>ここに説明文。ここに説明文。</p>
-						</div>
-					</div>
-          <div class="flow__imagebox">
-          	<img src="./images/flow03.svg" alt="フロー3">
-          </div>
-        </div>
-      </section>
       
       <section class="section ex" id="ex">
       <h2 class="section__title">断面写真一例</h2>
@@ -197,143 +112,125 @@
 			</div>
       </section>
       
+      
+      <section class="section process" id="process">
+      	<h2 class="section__title">製作工程</h2>
+    		<div class="process__box">
+					<div class="process__box__inner">
+						<h3>断面確認は何故必要？</h3>
+							<ul>
+								<li>
+									<span>試料の断面確認（観察）は、非破壊検査だけでは解明できない課題に対し、不良解析や内部構造解析を把握する為には、試料の断面を観察することが非常に重要であります。</span>
+								</li>
+							</ul>
+					</div>
+				</div>
+    		<div class="process__box">
+  				<div class="process__box__inner">
+						<h3>樹脂埋め工程</h3>
+						<ul>
+							<li><span>試料を埋め込み用カップにセット。</span></li>
+							<li><span>常温硬化樹脂と硬化剤を調合し真空ポンプにて脱泡。</span></li>
+							<li><span>試料をセット済のカップに常温硬化樹脂を注ぎ込む。</span></li>
+							<li><span>資料をセットしたカップに脱泡済の樹脂を注ぎ込んだ後、真空ポンプで更に二次脱泡を行う。</span></li>
+							<li><span>二次脱泡後、常温で硬化。</span></li>
+						</ul>
+					</div>
+				</div>
+   			
+    		<div class="process__box">
+  				<div class="process__box__inner">
+						<h3>研磨工程</h3>
+						<ul>
+							<li><span>耐水研磨紙、粗 ⇒ 中 ⇒ 細を使った手作業で水平な面出しを行った後、スエードクロスとアルミナ研磨剤を用い鏡面状態に仕上げます。</span></li>
+						</ul>
+					</div>
+				</div>
+    			<div class="process__box">
+						<div class="process__box__inner">
+						<h3>観察・測定</h3>
+						<ul>
+							<li><span>表面実装（SMT）の観察、金属間化合物の状況や結晶粒の形状、ウィスカやバリ、樹脂の流動性、コネクタの嵌合接触状態等、様々な解析技術をご用意しております。</span></li>
+						</ul>
+						</div>
+					</div>
+      </section>
+      
+      
+      <section class="flow" id="flow">
+        <h2 class="section__title">ご依頼の流れ</h2>
+        <div class="flow__wrapper">
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title"><span class="flow__textbox__num">01</span>メールフォーム記入</h3>
+							<p class="flow__textbox__description">ご依頼内容やお見積りに関するお問い合わせ等をページ下のお問い合わせフォームにご記入ください。<br>また、フォームに記入せず直接お電話していただいても結構です。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow01.svg" alt="フロー1">
+          </div>
+        </div>
+        <div class="flow__wrapper">
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title"><span class="flow__textbox__num">02</span>お電話でのご確認</h3>
+							<p class="flow__textbox__description">ご依頼の詳しい内容とそれに応じた料金や納期のご相談をするため、担当者からお客様にお電話いたします。<br>柔軟にお客様のご要望に対応するため、お客様の試料の断面を製作する技術スタッフが直接お電話させていただきます。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow02.svg" alt="フロー2">
+          </div>
+        </div>
+        <div class="flow__wrapper">
+          <div class="flow__textbox">
+						<div class="flow__textbox__inner">
+							<h3 class="flow__textbox__title">
+								<span class="flow__textbox__num">03</span>
+								ご納品
+							</h3>
+							<p class="flow__textbox__description">拡大写真と計測データは基本的に試料の到着から5営業日で納品しております。お急ぎであれば割増料金をいただき、3営業日で納品いたします。</p>
+						</div>
+					</div>
+          <div class="flow__imagebox">
+          	<img src="./images/flow03.svg" alt="フロー3">
+          </div>
+        </div>
+      </section>
+      
       <section class="section contact">
 	      <h2 class="section__title">お問い合わせ</h2>
-	      
+	      <div class="contact__info">
+	      	<p>直接お電話でもお問い合わせいただけます。</p>
+	      	<p class="contact__tel">
+	      		<svg class="sym sym__black"><use href="#symCall"></use></svg>
+	      		050-5891-5459
+	      	</p>
+	      </div>
 	      <div class="contact__form">
 	      	<div class="div1">
-						<label for="clientName">お名前</label>
-						<div class="contact__form__input" name="名前" id="clientName" contentEditable="true">aa</div>
-      			<label for="clientEmail">メールアドレス</label>
+						<label for="clientName">お名前<span class="required">必須</span></label>
+						<div class="contact__form__input" name="名前" id="clientName" contentEditable="true"></div>
+      			<label for="clientEmail">メールアドレス<span class="required">必須</span></label>
       			<div class="contact__form__input" name="Email" id="clientEmail" contentEditable="true"></div>
-      			<label for="clientTel">電話番号</label>
+      			<label for="clientTel">電話番号<span class="required">必須</span></label>
       			<div class="contact__form__input" name="電話番号" id="clientTel" contentEditable="true"></div>
-						<label for="clientCompany">会社名</label>
+						<label for="clientCompany">会社名<span class="required not">任意</span></label>
 						<div class="contact__form__input" name="会社名" id="clientCompany" contentEditable="true"></div>
 					</div>
 					<div class="div2">
-						<label for="clientComment">お問い合わせ内容</label>
+						<label for="clientComment">お問い合わせ内容<span class="required">必須</span></label>
 						<div class="contact__form__input comment" name="メール内容" id="clientComment" contentEditable="true"></div>
 						
       		</div>
 	      </div>
 	      <br><br>
-	      <button id="ajax">送信</div>
 	      
-				
-				
-				
-
-             
-              
-      
-        
+	      	<div id="ajax">送信</div>
       </section>
-       
-       
-<!--
-      <section class="section contact">
-	      <h2 class="section__title">お問い合わせ</h2>
-        <div class="table">
-          <div class="row">
-            <div class="contact__itemName cell">
-              <label for="clientName">お名前</label>
-						</div>
-            <div class="cell required">
-            	<span>必須</span>
-						</div>
-            <div class="cell">
-              <div class="inputText" name="名前" id="clientName" contentEditable="true">inputarea</div>
-              <div class="errMsgName">error message</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact__itemName cell">
-              <label>メールアドレス</label>
-						</div>
-            <div class="cell required">
-            	<span>必須</span>
-						</div>
-            <div class="cell">
-              <div class="inputText" name="Email" id="clientEmail" contentEditable="true">inpu@ta.rea</div>
-              <div class="errMsg">error message</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact__itemName cell">
-              <label>電話番号</label>
-						</div>
-            <div class="cell required">
-            	<span>必須</span>
-						</div>
-            <div class="cell">
-              <div class="inputText" name="電話番号" id="clientTel" contentEditable="true">inputarea</div>
-              <div class="errMsg">error message</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact__itemName cell">
-              <label>会社名</label>
-						</div>
-            <div class="cell required">
-						</div>
-            <div class="cell">
-              <div class="inputText" name="会社名" id="clientCompany" contentEditable="true">inputarea</div>
-              <div class="errMsg">error message</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact__itemName cell">
-              <label>お問い合わせ内容</label>
-						</div>
-            <div class="cell required">
-            	<span>必須</span>
-						</div>
-            <div class="cell">
-              <div class="inputText" name="メール内容" id="clientComment" contentEditable="true">inputarea</div>
-              <div class="errMsg">error message</div>
-            </div>
-          </div>
-        </div>
-        
-    <p id="aja">
-      送信
-    </p>
-        
-      </section>
--->
-        
-<!--
-    <table class="formTable">
-      <tr>
-        <th>お名前</th>
-        <td><input size="20" type="text" name="名前"> ※必須</td>
-      </tr>
-      <tr>
-        <th>Mail（半角）</th>
-        <td><input size="30" type="text" name="Email" id="clientEmail"> ※必須</td>
-      </tr>
-      <tr>
-        <th>お電話番号</th>
-        <td><input size="30" type="text" name="電話番号" id="clientTel">※必須</td>
-      </tr>
-      <tr>
-        <th>会社名</th>
-        <td><input size="30" type="text" name="会社名" id="clientCompany"></td>
-      </tr>
-      <tr>
-        <th>お問い合わせ内容<br /></th>
-        <td><textarea name="メール内容" cols="50" rows="5" id="clientComment"></textarea></td>
-      </tr>
-    </table>
--->
-
-      
-      
     </main>
     
     <footer>
-
+			Copyright © - Precision Hand - all rights reserved.
     </footer>
     
 		<script src="js/jquery-3.5.1.min.js"></script>
