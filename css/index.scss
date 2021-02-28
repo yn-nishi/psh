@@ -5,23 +5,22 @@
 $white: #f2f2f2;
 $black: #0a0a0a;
 $yellow: #ebd842;
+$darkYellow: darken($yellow, 20%);
 $m: 1.0rem;
 $l: 1.3rem;
 $ll: 1.8rem;
-$x: 4.0rem;
-$logoColor: $white;
-$navColor: $white;
-$headerBgColor: rgba($black, 0.8);
-$headerBgColor2: rgba($white, 0.2);
+$headerBgColor: rgba($black, 0.9);
+$headerBgColor2: rgba($white, 0.9);
 
 /* --------------------------------
- * base
+ * base & common
  * -------------------------------- */
 
+/* Google Fonts 使用 */
 @font-face {
   font-family: 'M PLUS Rounded 1c';
 	src: url('../fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
-	/* SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 http://scripts.sil.org/OFL */
+	/* SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 (http://scripts.sil.org/OFL) */
 }
 
 @font-face {
@@ -30,8 +29,15 @@ $headerBgColor2: rgba($white, 0.2);
 	/* Copyright 2015 The Akaya Telivigala Project Authors (https://github.com/vaishnavimurthy/Akaya-Telivigala) */
 }
 
+@font-face {
+  font-family: 'Noto Serif JP';
+	src: url('../fonts/NotoSerifJP-Light.otf') format('opentype');
+	/* SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 (http://scripts.sil.org/OFL) */
+}
+
 body {
   width: 100%;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 	letter-spacing : 1px;
 }
 *, *::before, *::after {
@@ -45,26 +51,30 @@ body {
   height: 0;
 }
 
+.section {
+	padding: 3rem 0 2.5rem;
+	&__title {
+    font-size: $ll;
+    text-align: center;
+    padding: 4rem;
+  }
+}
+
 /* --------------------------------
  * header nav
  * -------------------------------- */
 .header {
   position: fixed;
-  z-index: 100;
+  z-index: 200;
   width: 100%;
-  color: $logoColor;
+  color: $white;
   background-color: $headerBgColor;
   display: flex;
   align-items: center;
 	justify-content: space-between;
-	
-		&.scroll {
-		background-color: $headerBgColor2;
-		}
-	
-	
+
 	a {
-		color: $navColor;
+		color: $white;
 		text-decoration: none;
 	}
 	
@@ -76,7 +86,7 @@ body {
     font-family: 'Akaya Telivigala', cursive;
 		text-align: center;
 		text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(#aaaaaa,0.15);
-
+		
 		&__sub {
 			margin: 0;
 			padding: 0;
@@ -87,74 +97,101 @@ body {
 			font-size: $m * 0.8;
 			letter-spacing: normal;
 		}
+			
+		&:hover  {
+			color: $yellow;
+		}
   }
 	
-  .gnav {
-		&__image {
-			stroke: $white;
-			width: $m;
-			height: $m;
-		}
 		
-		&__menu__item {
-			float: left;
-			margin-right: $m;
-			padding: 0px;
-			font-family: 'M PLUS Rounded 1c', sans-serif;
-			
-			&:last-of-type {
-				margin-right: 0;
+	 .gnav__menu__item {
+		float: left;
+		margin-right: $m;
+		padding: 0px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		& a {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			&::after {
+				position: absolute;
+				left: 50%;
+				bottom: -4px;
+				content: '';
+				width: 0;
+				height: 1px;
+				background-color: $yellow;
+				transition: width 0.3s ease-in;
+				transform: translateX(-50%);
 			}
-			
-			& a {
-				position: relative;
-//				vertical-align: middle;
-//				line-height: 100%;
-				display: flex;
-				align-items: center;
-//				justify-content: center;
-				
+
+			&:hover {
+				.sym {
+					stroke: $yellow;
+					stroke-width: 3;
+				}
+
 				&::after {
-					position: absolute;
-					left: 50%;
-					bottom: -4px;
-					content: '';
-					width: 0;
-					height: 1px;
-					background-color: $yellow;
-					transition: width 0.3s ease-in;
-					transform: translateX(-50%)
-				}
-				
-				&:hover {
-				
-					&::after {
-						width: 100%;
-					}
-					
-					&:hover .sym {
-						stroke: $yellow;
-						stroke-width: 3;
-					}
+					width: 100%;
 				}
 			}
 		}
+	}
 		
-    &__support {
-			margin-right: 2rem;
-			pointer-events: none;
-    }
-  }
+	 .gnav__support {
+		margin-right: 2rem;
+		pointer-events: none;
+
+		a {
+			display: flex;
+			align-items: center;
+		}
+	}
+	
+	/* 背景が黒の時のheader設定 */
+	&.scroll {
+		background-color: $headerBgColor2;
+		.gnav__menu__item {
+		color: $black;
+		}
+		
+		.sym {
+			stroke: $black;
+			stroke-width: 2;
+		}
+		
+		a {
+			color: $black;
+			text-decoration: none;
+			
+			&::after {
+				height: 3px;
+				background-color: $darkYellow;
+			}
+
+			&:hover {
+				font-weight: bold;
+				
+				.sym {
+					stroke: $black;
+					stroke-width: 3;
+					fill: $yellow;
+				}
+				.header__logo {
+					color: $black;
+//					text-shadow: 2px 2px 0px #000, 3px 2px 4px rgba(#000,0.15);
+					font-weight: bold;
+				}
+			}
+		}
+	}
 }
 
-.section {
-	padding: $x 0;
-	&__title {
-    font-size: $ll;
-    text-align: center;
-    padding: $x;
-  }
-}
 
 /* --------------------------------
  * keynote view
@@ -163,9 +200,11 @@ body {
 	padding: 0;
   &__copy {
     position: absolute;
-    left: 10rem;
-    top: 20rem;
+    left: 10%;
+    top: 45%;
     font-size: $ll;
+		line-height: 1.5;
+		font-family: 'Noto Serif JP', serif;
     color: $black;
     z-index: 1;
 		text-align: center;
@@ -176,7 +215,7 @@ body {
     background-color: $white;
     &__inner{
       position: relative;
-      left: 25rem;
+      left: 20%;
       height: 650px;
       background: linear-gradient(to left, transparent 0%, transparent 70%, $white 100%), url('../images/top.png');
       background-size: cover;
@@ -190,26 +229,60 @@ body {
  * cross section pictures
  * -------------------------------- */
 .ex {
-  background-color: #000;
+  background-color: $black;
   color: $white;
-  &__box {
-      margin: 5rem 0;
-      width: 20%;
-//      border: 3px solid lightgreen;
-//    &:last-of-type {
-//      margin-right: auto;
-//    }
-    &__wrapper {
+	
+			p {
+				padding-bottom: 3rem;
+				text-align: center;
+			}
+	&__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+			align-items: center;
+		
+		&__box {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-			padding: 1px;
-//      border: 3px solid lightgreen;
-    }
+			width: 50%;
+			border-right: 1px solid $yellow;
+		}
+		
+		&__magnify {
+			width: 35%;
+			
+			.small img {
+				width: 100%;
+				max-width: 320px;
+				box-shadow: 1px 1px 15px 15px#aaa;
+			}
+			
+			p {
+				padding-top: 2.5rem;
+				text-align: center;
+			}
+		}
+	}
+	
+	
+  &__box {
+		margin: 1rem 0;
+		width: 30%;
+		
     &__image {
-    max-width: 100%;
-    max-height: 100%;
+			position: relative;
+			max-width: 100%;
+			max-height: 100%;
+			box-shadow: 1px 1px 4px rgba(#aaa, 1);
+			cursor: pointer;
+			
+			&:active {
+				top: 3px;
+				box-shadow: unset;
+			}
     }
+		
     &__description {
 //      border: 3px solid lightgreen;
       padding-top: 2rem;
@@ -321,7 +394,6 @@ body {
 //      border: 2px solid lightgreen;
 			margin-top: $m;
 			line-height: 1.5;
-//			white-space: nowrap;
 		}
 		
 		&__title {
@@ -344,10 +416,15 @@ body {
  * -------------------------------- */
 .contact{
 	background-color: $white;
+	
 	&__info {
 		text-align: center;
 	}
+	
 	&__tel{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		margin: 1rem 0 3rem 0;
 		font-size: $l;
 		font-weight: bold;
@@ -359,7 +436,12 @@ body {
 			-1px -1px 0px $black,
 			1px  0px 0px $black,
 			0px  1px 0px $black,
-			-1px  0px 0px $black,
+			-1px  0px 0px $black;
+		
+		.sym.sym__black {
+			margin-right: 4px;
+			fill: $yellow;
+		}
 	}
 	&__form {
 		margin: 0 auto;
@@ -369,20 +451,15 @@ body {
 		
 		> div {
 			width: 35%;
+			
 			&:first-of-type {
-			margin-right: 5%;
+			margin-right: 5%;	
 			}
-//			&:last-of-type {
-//			width: 35%;
-////			margin-left: 5%;
-//			}
 		}
 		
 		label {
-//      border: 1px solid lightgreen;
 			display: block;
 			margin: 2rem 0 0.5rem 0;
-//			line-height: 1;
 				
 				.required {
 					display: inline-block;
@@ -414,12 +491,20 @@ body {
 			}	
 		}
 	}
+	.errMsg {
+		padding: 3px;
+		color: crimson;
+	}
+	.sendMsg {
+		text-align: center;
+		margin-top: 1rem;
+		height: 1rem;
+	}
 }
 #ajax {
-	display: block;
 	position: relative;
-	max-width: 5rem;
-	margin: 0 auto;
+	max-width: 4rem;
+	margin: 2rem auto;
 	padding: 0.4rem;
 	text-align: center;
 	background-color: #eee;
@@ -480,21 +565,22 @@ footer {
   width: 1rem;
 	height: 1rem;
 	stroke-width: 2;
+	margin-right: 2px;
 //	border: 1px solid white;
 //	display: inline;
 	
 	&.sym__black {
-		fill: $black;
+		fill: transparent;
 		stroke: $black;
 	}
 	
 	&.sym__white {
-		fill: $white;
+		fill: transparent;
 		stroke: $white;
 	}
 	
 	&.sym__yellow {
-		fill: $yellow;
+		fill: transparent;
 		stroke: $yellow;
 	}
 }

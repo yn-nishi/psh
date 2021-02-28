@@ -8,7 +8,7 @@
 }
 /* This wraps the large image and hides it */
 .az-zoom {
-	background: #0a0a0a;
+	background: #ccc;
 	border: #aaa 2px solid;
 	border-radius: 50%;
 	position: absolute;
@@ -63,4 +63,7 @@
 	background: #000;
 	background: rgba(0,0,0,0.5);
 	color: #fff;
+}
+.az-zoom:hover {
+	cursor: none;
 }
