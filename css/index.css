@@ -411,29 +411,35 @@ body {
 
 /* line 504, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 #ajax {
+  display: block;
   position: relative;
   max-width: 4rem;
-  margin: 2rem auto;
-  padding: 0.4rem;
+  margin: 1rem auto;
+  padding: 0.3rem 1rem;
+  outline: none;
   text-align: center;
   background-color: #eee;
   cursor: pointer;
-  border: 1px solid #aaa;
+  border: 1px solid #0a0a0a;
   border-radius: 5px;
   box-shadow: 1px 1px 1px #0a0a0a; }
-  /* line 515, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 517, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   #ajax:hover {
     background-color: #ebd842; }
-  /* line 518, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 520, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   #ajax:active {
     border: 1px solid #0a0a0a;
     top: 2px;
-    box-shadow: unset; }
+    box-shadow: unset;
+    background-color: rgba(235, 216, 66, 0.3); }
+  /* line 526, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  #ajax:disabled {
+    background-color: unset; }
 
 /* --------------------------------
  * footer
  * -------------------------------- */
-/* line 529, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 535, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 footer {
   text-align: right;
   padding: 1rem 4rem;
@@ -444,7 +450,7 @@ footer {
 /* --------------------------------
  * parts
  * -------------------------------- */
-/* line 540, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 546, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .scrollArrow {
   margin: 0 auto;
   background-color: transparent;
@@ -464,21 +470,21 @@ footer {
   100% {
     opacity: 1; } }
 
-/* line 564, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 570, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .sym {
   width: 1rem;
   height: 1rem;
   stroke-width: 2;
   margin-right: 2px; }
-  /* line 572, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 578, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .sym.sym__black {
     fill: transparent;
     stroke: #0a0a0a; }
-  /* line 577, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 583, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .sym.sym__white {
     fill: transparent;
     stroke: #f2f2f2; }
-  /* line 582, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 588, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .sym.sym__yellow {
     fill: transparent;
     stroke: #ebd842; }

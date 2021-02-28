@@ -27,7 +27,6 @@ $(function(){
 	const flowH = $('#flow').position().top;
 	$(window).on('scroll', function(e) {
 		const currentH = e.currentTarget.scrollY;
-
 		if (currentH >= kvH - headerH && currentH <= flowH - headerH){
 			$('.header').addClass('scroll');
 		} else {
@@ -60,47 +59,43 @@ $(function(){
 		$('.errMsg').remove();
 		$('.sendMsg').html('');
 		// バリデーション
-		if(!formData['名前']) {
-			$('#clientName').after('<p class="errMsg">お名前は必須です。</p>')
-		}
-		if(!formData['Email']) {
-			$('#clientEmail').after('<p class="errMsg">メールアドレスは必須です。</p>')
-		}
-		if(!formData['電話番号']) {
-			$('#clientTel').after('<p class="errMsg">電話番号は必須です。</p>')
-		}
-		if(!formData['メール内容']) {
-			$('#clientComment').after('<p class="errMsg">お問い合わせ内容は必須です。</p>')
-		}
 		let isComplete = false;
-		if(formData['名前'] && formData['Email'] && formData['電話番号'] && formData['メール内容']) {
-			isComplete = true;
-			$('.sendMsg').html('送信中...');
-		}
+		if(formData['名前'] && formData['Email'] && formData['電話番号'] && formData['メール内容']) isComplete = true;
+		if(!formData['名前']) $('#clientName').after('<p class="errMsg">お名前は必須です。</p>');
+		if(!formData['Email']) $('#clientEmail').after('<p class="errMsg">メールアドレスは必須です。</p>');
+		if(!formData['電話番号']) $('#clientTel').after('<p class="errMsg">電話番号は必須です。</p>');
+		if(!formData['メール内容']) $('#clientComment').after('<p class="errMsg">お問い合わせ内容は必須です。</p>');
 		// 送信
 		if(isComplete) {
-			
 			$.ajax({
 				type: "POST",
 				url: "https://ynyn.mixh.jp/cgi/mail_psh/mail.php",
-				data: formData
-			}).then(function(data) {
-				if(data.trim() === 'success') {
-					
-					$('.sendMsg').html('お問い合わせありがとうございます。後ほど担当者からご連絡いたします。');
-				} else {
-					// $('.sendMsg').delay(1500).queue(function() {
-					// 	$(this).html(`<p class="errMsg">${data}</p>`).dequeue;
-					// })
-					$('.sendMsg').delay(1500).queue(function() {
-						$(this).html(`<p class="errMsg">${data}</p>`).dequeue;
-					})
+				data: formData,
+				beforeSend: function() {
+					$('.sendMsg').html('送信中....')
+					$('#ajax').prop('disabled', true);
 				}
-				// console.log(data);
-			}, function() {
-				$('.sendMsg').html('<p class="errMsg">通信エラーにより送信に失敗しました。</p>');
+			})
+			.done(function(data) {
+				// setTimeoutで送信してるっぽく見せる
+				setTimeout(function() {
+					if(data.trim() === 'success') {
+						$('.sendMsg').html('お問い合わせありがとうございます。後ほど担当者からご連絡いたします。');
+					} else {
+						// PHPからのエラーメッセージ
+						$('.sendMsg').html(`<p class="errMsg">${data}</p>`);
+						$('#ajax').prop('disabled', false);
+					}
+				}, 1500);
+			})
+			.fail(function() {
+				setTimeout(function() {
+					$('.sendMsg').html('<p class="errMsg">通信エラーにより送信に失敗しました。</p>');
+					$('#ajax').prop('disabled', false);
+				}, 1500);
 			});
 		}
+		return false;
 	})
 
 
