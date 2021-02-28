@@ -380,7 +380,7 @@
 		// content areas
 		smallArea   : 'small',    // class of small content area; the element with this class name must be inside of the wrapper
 		largeArea   : 'large',    // class of large content area; this class must exist inside of the wrapper. When the clone option is true, it will add this automatically
-		clone       : false,      // Make a clone of the small content area, use css to modify the style
+		clone       : true,      // Make a clone of the small content area, use css to modify the style
 		// appearance
 		overlay     : false,      // set to true to apply overlay class "az-overlay"; false to not apply it
 		speed       : 100,        // fade animation speed (in milliseconds)
@@ -396,7 +396,12 @@
 
 	$.fn.anythingZoomer = function(options, second, sx, sy) {
 		return this.each(function() {
-			var anyZoom = $(this).data('zoomer');
+			
+			//////////////////////////////
+			// var anyZoom = $(this).data('zoomer'); //comment outed by yn-nishi
+			var anyZoom; //edited by yn-nishi
+			//////////////////////////////
+
 			// initialize the zoomer but prevent multiple initializations
 			if ( /object|undefined/.test( typeof options ) ) {
 				if (anyZoom) {
