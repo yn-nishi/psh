@@ -475,13 +475,14 @@ body {
 		display: flex;
 		justify-content: center;
 		
+      // 画像と説明を互い違いに表示
+      &:nth-of-type(even) > .flow__imagebox {
+        order: -1;
+      }
+			
 		&>* {
 			flex-basis: 30%;
 			margin: 2rem 1rem;
-      // 画像と説明を互い違いに表示
-      &:nth-of-type(even)>.flow__imagebox {
-        order: -1;
-      }
       // イメージ画像非表示に応じた調整
       @media screen and(max-width: 780px) {
         flex-basis: 70%;

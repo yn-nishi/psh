@@ -4,7 +4,7 @@
   "description": "https://yn-nishi.github.io/psh/",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass css/index.scss css/index.css --output-style expanded"
+    "sass": "node-sass css/index.scss css/index.css --output-style expanded -w"
   },
   "keywords": [],
   "author": "",
