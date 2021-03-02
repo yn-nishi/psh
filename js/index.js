@@ -17,13 +17,15 @@ $(function(){
 		}
 	}
 	$('.kv__copy').html(newText);
-	console.log($('.kv__copy'));
 	// spanを左右からfadeIn
 	const spans = $('.kv__copy span').hide();
-	let fadeInTime = 2000;
+	let fadeInTime = 5000;
 	spans.each(function(i) {
 		spans.eq(i).fadeIn(fadeInTime);
-		fadeInTime += 1000 - 250 * i;
+		fadeInTime = 5000 + (2000 * i);
+		if(fadeInTime >= 15000) {
+			fadeInTime = 15000 + (100 * i);
+		}
 	});
 
 	// 拡大鏡
