@@ -1,10 +1,13 @@
 <!doctype html>
+<!-- Copyright 2021 yn-nishi All Rights Reserved.-->
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
     <title>断面研磨はPSH</title> 
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/anythingzoomer.css">
     <link rel="stylesheet" href="css/index.css">
@@ -45,8 +48,7 @@
 			</symbol>
 		</svg>
 		
-
-		<header class="header">
+		<header class="header" id="header">
 			<a href="./">
 				<div class="header__logo">
 					<p>PSH<span class="header__logo__sub">-Precision Hand-</span></p>
@@ -55,22 +57,22 @@
       <nav class="gnav__menu">
         <ul class="gnav__menu__list clearfix">
           <li class="gnav__menu__item">
-						<a href="#ex"><svg class="sym sym__yellow"><use href="#symPicture"></use></svg>断面写真</a>
+						<a href="#ex"><svg class="sym sym__yellow"><use href="#symPicture"></use></svg><p>断面写真</p></a>
           </li>
           <li class="gnav__menu__item">
-						<a href="#process"><svg class="sym sym__yellow"><use href="#symProcess"></use></svg>製作工程</a>
+						<a href="#process"><svg class="sym sym__yellow"><use href="#symProcess"></use></svg><p>製作工程</p></a>
           </li>
           <li class="gnav__menu__item">
-						<a href="#flow"><svg class="sym sym__yellow"><use href="#symFlow"></use></svg>ご依頼の流れ</a>
+						<a href="#flow"><svg class="sym sym__yellow"><use href="#symFlow"></use></svg><p>ご依頼の流れ</p></a>
           </li>
           <li class="gnav__menu__item">
-						<a href="#contact"><svg class="sym sym__yellow"><use href="#symMail"></use></svg>お問い合わせ</a>
+						<a href="#contact"><svg class="sym sym__yellow"><use href="#symMail"></use></svg><p>お問い合わせ</p></a>
           </li>
         </ul>
       </nav>
       <nav class="gnav__support">
-				<a href="tel:05058915459"><svg class="sym sym__yellow"><use href="#symCall"></use></svg>050-5891-5459</a>
-      </nav>
+				<svg class="sym sym__yellow"><use href="#symCall"></use></svg><p>050-5891-5459</p>
+			</nav>
     </header>
     
     <main>
@@ -84,33 +86,39 @@
       
       <section class="section ex" id="ex">
 				<h2 class="section__title">断面写真一例</h2>
-				<p class="pcOnly">PCでご覧の場合はマウスを乗せると拡大できます。</p>
+				<p class="pcOnly">マウスを乗せると拡大できます。(PCのみ)</p>
 				<div class="ex__wrapper">
 
 					<div class="ex__wrapper__box">
 						<div class="ex__box">
 							<img src="./images/cs01.png" alt="USB 3.0micro コネクターの嵌合断面観察" class="ex__box__image">
+						  <p>USB 3.0micro コネクターの嵌合断面観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs02.png" alt="電線への圧接状態観察" class="ex__box__image">
+							<p>電線への圧接状態観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs03.png" alt="FFCコネクターの嵌合断面観察" class="ex__box__image">
+							<p>FFCコネクターの嵌合断面観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs04.png" alt="FFCと端子の接触状態観察" class="ex__box__image">
+							<p>FFCと端子の接触状態観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs05.png" alt="芯線圧着観察" class="ex__box__image">
+							<p>芯線圧着観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs06.png" alt="プローブピン内部構造観察" class="ex__box__image">
+							<p>プローブピン内部構造観察</p>
 						</div>
 						<div class="ex__box">
 							<img src="./images/cs07.png" alt="金属バリの観察" class="ex__box__image">
+							<p>金属バリの観察</p>
 						</div>
 					</div>
-
 					<div class="ex__wrapper__magnify">
 						<div id="zoom1">
 							<div class="small">
@@ -124,7 +132,6 @@
 					</div>
 				</div>
       </section>
-      
       
       <section class="section process" id="process">
       	<h2 class="section__title">製作工程</h2>
@@ -150,7 +157,6 @@
 						</ul>
 					</div>
 				</div>
-   			
     		<div class="process__box">
   				<div class="process__box__inner">
 						<h3>研磨工程</h3>
@@ -168,7 +174,6 @@
 					</div>
 				</div>
       </section>
-      
       
       <section class="flow" id="flow">
         <h2 class="section__title">ご依頼の流れ</h2>
@@ -214,7 +219,7 @@
 	      <h2 class="section__title">お問い合わせ</h2>
 	      <div class="contact__info">
 	      	<p>直接お電話でもお問い合わせいただけます。</p>
-	      	<p class="contact__tel"><svg class="sym sym__black" fill="#ff0000"><use href="#symCall"></use></svg>050-5891-5459</p>
+					<p class="contact__tel"><svg class="sym sym__black"><use href="#symCall"></use></svg>050-5891-5459</p>
 	      </div>
 	      <div class="contact__form">
 	      	<div>

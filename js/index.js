@@ -1,4 +1,30 @@
+// Copyright 2021 yn-nishi All Rights Reserved.
 $(function(){
+
+	// headerがposition:fixedなのでその分bodyを下げる。
+	const headerH = $("#header").height();
+	$("#kv").css("padding-top", headerH);
+
+	// キャッチコピーをゆるやかに表示
+	// 1文字ずつspanで囲む
+	let newText = '';
+	for (const t of $('.kv__copy').text()) {
+		// 「も」で改行
+		if(t === 'も') {
+			newText += '<span>' + t + '</span><br>';
+		} else {
+			newText += '<span>' + t + '</span>';
+		}
+	}
+	$('.kv__copy').html(newText);
+	console.log($('.kv__copy'));
+	// spanを左右からfadeIn
+	const spans = $('.kv__copy span').hide();
+	let fadeInTime = 2000;
+	spans.each(function(i) {
+		spans.eq(i).fadeIn(fadeInTime);
+		fadeInTime += 1000 - 250 * i;
+	});
 
 	// 拡大鏡
 	// 最初の写真
@@ -22,10 +48,11 @@ $(function(){
 	})
 
 	// スクロール位置によってバナーの背景色等を変更
-	const headerH = $('.header')[0].scrollHeight;
-	const kvH = $('#kv')[0].scrollHeight;
-	const flowH = $('#flow').position().top;
 	$(window).on('scroll', function(e) {
+		// window幅変更に対応するため要素の高さは都度取得
+		const headerH = $('.header')[0].scrollHeight;
+		const kvH = $('#kv')[0].scrollHeight;
+		const flowH = $('#flow').position().top;
 		const currentH = e.currentTarget.scrollY;
 		if (currentH >= kvH - headerH && currentH <= flowH - headerH){
 			$('.header').addClass('scroll');
@@ -35,10 +62,10 @@ $(function(){
 		return false;
 	});
 	
-	// アンカーリンク スムーズスクロール
+	// アンカーリンクをスムーズにスクロール
 	$('a[href^="#"]').on('click', function(e) {
 		e.preventDefault();
-    const speed = 600;
+    const speed = 800;
     const href= $(this).attr("href");
     const target = $(href == "#" || href == "" ? 'html' : href);
     const position = target.position().top;
@@ -77,7 +104,7 @@ $(function(){
 				}
 			})
 			.done(function(data) {
-				// setTimeoutで送信してるっぽく見せる
+				// setTimeoutで「送信中...」表示を少し維持
 				setTimeout(function() {
 					if(data.trim() === 'success') {
 						$('.sendMsg').html('お問い合わせありがとうございます。後ほど担当者からご連絡いたします。');
@@ -97,6 +124,5 @@ $(function(){
 		}
 		return false;
 	})
-
 
 });

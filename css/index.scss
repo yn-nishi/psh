@@ -1,7 +1,8 @@
+@charset "UTF-8";
+/* Copyright 2021 yn-nishi All Rights Reserved. */
 // --------------------------------
 // variables
 // --------------------------------
-@charset "UTF-8";
 $white: #f2f2f2;
 $black: #0a0a0a;
 $yellow: #ebd842;
@@ -9,8 +10,8 @@ $darkYellow: darken($yellow, 20%);
 $m: 1.0rem;
 $l: 1.3rem;
 $ll: 1.8rem;
-$headerBgColor: rgba($black, 0.9);
-$headerBgColor2: rgba($white, 0.9);
+$headerBgColor: rgba($black, 0.8);
+$headerBgColor2: rgba($white, 0.8);
 
 /* --------------------------------
  * base & common
@@ -39,6 +40,11 @@ body {
   width: 100%;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	letter-spacing : 1px;
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -61,6 +67,32 @@ body {
 }
 
 /* --------------------------------
+ * svg画像
+ * -------------------------------- */
+.sym {
+  width: 1rem;
+	height: 1rem;
+	stroke-width: 2;
+	margin-right: 2px;
+	
+	&.sym__black {
+		fill: transparent;
+		stroke: $black;
+	}
+	
+	&.sym__white {
+		fill: transparent;
+		stroke: $white;
+	}
+	
+	&.sym__yellow {
+		fill: transparent;
+		stroke: $yellow;
+	}
+}
+
+
+/* --------------------------------
  * header nav
  * -------------------------------- */
 .header {
@@ -73,11 +105,6 @@ body {
   align-items: center;
 	justify-content: space-between;
 
-	a {
-		color: $white;
-		text-decoration: none;
-	}
-	
   &__logo {
 		padding: 5px;
 		margin-left: 1rem;
@@ -96,6 +123,18 @@ body {
 			text-align: center;
 			font-size: $m * 0.8;
 			letter-spacing: normal;
+      // サブタイトルは横に並べて縦方向スペース確保
+      @media screen and(max-width: 620px) {
+        display: inline-block;
+        margin-left: 0.5rem;
+        vertical-align: baseline;
+			  font-size: $m * 0.9;
+        line-height: 1;
+      }
+      // 350px以下は非表示
+      @media screen and(max-width: 350px) {
+        display: none;
+      }
 		}
 			
 		&:hover  {
@@ -111,8 +150,19 @@ body {
 
 		&:last-of-type {
 			margin-right: 0;
-		}
-
+			// 電話番号を非表示にすると右側に寄りすぎるのでmargin追記
+			@media screen and(max-width: 780px) {
+				margin-right: 2rem;
+			}
+    }
+		
+    p {
+      // 文字を非表示 アイコンは残る
+		  @media screen and(max-width: 620px) {
+        display: none;
+      }
+    }
+		
 		& a {
 			position: relative;
 			display: flex;
@@ -143,22 +193,21 @@ body {
 		}
 	}
 		
-	 .gnav__support {
+	.gnav__support {
 		margin-right: 2rem;
-		pointer-events: none;
-
-		a {
-			display: flex;
-			align-items: center;
+		display: flex;
+		align-items: center;
+		
+    // 電話番号非表示
+		@media screen and(max-width: 780px) {
+			display: none;
 		}
 	}
 	
-	/* 背景が黒の時のheader設定 */
+	/* body背景が黒の時のheaderスタイル */
 	&.scroll {
-		background-color: $headerBgColor2;
-		.gnav__menu__item {
 		color: $black;
-		}
+		background-color: $headerBgColor2;
 		
 		.sym {
 			stroke: $black;
@@ -166,9 +215,6 @@ body {
 		}
 		
 		a {
-			color: $black;
-			text-decoration: none;
-			
 			&::after {
 				height: 3px;
 				background-color: $darkYellow;
@@ -184,7 +230,6 @@ body {
 				}
 				.header__logo {
 					color: $black;
-//					text-shadow: 2px 2px 0px #000, 3px 2px 4px rgba(#000,0.15);
 					font-weight: bold;
 				}
 			}
@@ -201,25 +246,55 @@ body {
   &__copy {
     position: absolute;
     left: 10%;
-    top: 45%;
+    top: 40%;
     font-size: $ll;
 		line-height: 1.5;
 		font-family: 'Noto Serif JP', serif;
     color: $black;
-    z-index: 1;
+    z-index: 10;
 		text-align: center;
+    
+    @media screen and(max-width: 900px) {
+      left: 5%;
+    }
   }
   &__wrapper {
     max-width: 100%;
     overflow: hidden;
     background-color: $white;
+		
     &__inner{
       position: relative;
       left: 20%;
       height: 650px;
-      background: linear-gradient(to left, transparent 0%, transparent 70%, $white 100%), url('../images/top.png');
+      background:
+        // transparent使うとiOSで灰色になるのでrgba(255,255,255,0)で表記
+        linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 70%, $white 100%),
+        url('../images/top.png');
       background-size: cover;
       background-repeat: no-repeat;
+      // top画像の位置と色合いを調整
+      @media screen and(max-width: 900px) {
+        left: 10%; 
+        background:
+          linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, $white 100%),
+          url('../images/top.png');
+      }
+      @media screen and(max-width: 780px) {
+        left: 0;
+        background:
+          linear-gradient(
+            to left,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0) 30%,
+            rgba(255,255,255,0.7) 50%,
+            rgba(255,255,255,0.9) 100%
+          ),
+          url('../images/top.png');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
   }
 }
@@ -236,6 +311,7 @@ body {
 				padding-bottom: 3rem;
 				text-align: center;
 			}
+  
 	&__wrapper {
       display: flex;
       justify-content: space-evenly;
@@ -247,10 +323,19 @@ body {
       flex-wrap: wrap;
 			width: 50%;
 			border-right: 1px solid $yellow;
+      // 拡大鏡非表示に伴う調整
+      @media screen and(max-width: 900px) {
+        border-right: none;
+        width: 70%;
+      }
 		}
 		
 		&__magnify {
 			width: 35%;
+      // タブレットはマウスホバーできないので拡大鏡非表示
+      @media screen and(max-width: 900px) {
+        display: none;
+      }
 			
 			.small img {
 				width: 100%;
@@ -269,6 +354,10 @@ body {
   &__box {
 		margin: 1rem 0;
 		width: 30%;
+    // 拡大鏡非表示に伴う調整
+    @media screen and(max-width: 900px) {
+      width: 100%;
+    }
 		
     &__image {
 			position: relative;
@@ -276,23 +365,37 @@ body {
 			max-height: 100%;
 			box-shadow: 1px 1px 4px rgba(#aaa, 1);
 			cursor: pointer;
+      // 拡大鏡非表示に伴う調整
+      @media screen and(max-width: 900px) {
+        cursor: unset;
+      }
 			
 			&:active {
 				top: 3px;
 				box-shadow: unset;
+        // 拡大鏡非表示に伴う調整
+        @media screen and(max-width: 900px) {
+          top: unset;
+			    box-shadow: 1px 1px 4px rgba(#aaa, 1);
+        }
 			}
     }
 		
     &__description {
-//      border: 3px solid lightgreen;
       padding-top: 2rem;
-//			margin: 1rem;
       text-align: center;
+    }
+    // 拡大鏡非表示の場合専用の断面画像の説明文
+    p {
+      display: none;
+      @media screen and(max-width: 900px) {
+        display: block;
+        margin: 1rem auto 3rem;;
+        padding-bottom: 0;
+      }
     }
   }
 }
-
-
 
 /* --------------------------------
  * process
@@ -302,10 +405,13 @@ body {
 	color: $white;
 	
 	&__box {
-//      border: 3px solid lightgreen;
 		position: relative;
-		max-width:40%;
+		max-width: 40%;
 		margin: 3rem auto 0;
+    
+    &:first-of-type {
+  		margin: 0 auto ;
+    }
 		
 		&__inner {
 			padding: $m;
@@ -349,6 +455,10 @@ body {
 			right: 0;
 			bottom: 0;
 		}
+    
+    @media screen and(max-width: 900px) {
+      max-width: 70%;
+    }
 	}
 }
 
@@ -366,18 +476,19 @@ body {
 		&>* {
 			flex-basis: 30%;
 			margin: 2rem 1rem;
-		}
-		
-		&:nth-of-type(even)>.flow__imagebox {
-			order: -1;
+      // 画像と説明を互い違いに表示
+      &:nth-of-type(even)>.flow__imagebox {
+        order: -1;
+      }
+      // イメージ画像非表示に応じた調整
+      @media screen and(max-width: 780px) {
+        flex-basis: 70%;
+        margin: 2rem 1rem;
+      }
 		}
 	}
 	
-	&__textbox {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		
+  &__textbox {
 		&__inner {
 		padding: 1.5em;
 		background-color: #fff;
@@ -391,7 +502,6 @@ body {
 		}
 		
 		&__description {
-//      border: 2px solid lightgreen;
 			margin-top: $m;
 			line-height: 1.5;
 		}
@@ -399,14 +509,19 @@ body {
 		&__title {
 			padding: 0.1rem;
 			font-weight: bold;
-			background: linear-gradient(to right, $yellow 0%, rgba($yellow, 0.3) 20%, transparent 80%);
+			background: linear-gradient(to right, $yellow 0%, rgba($yellow, 0.3) 20%, rgba(255,255,255,0) 80%);
 			border-radius: 5px;
 		}
 		
 	}
 	&__imagebox {
+    
 		img {
-			width: 100%;
+			  width: 100%;
+      }
+    // イメージ画像非表示
+    @media screen and(max-width: 780px) {
+      display: none;
 		}
 	}
 }
@@ -448,12 +563,31 @@ body {
 		width: 70%;
 		display: flex;
 		justify-content: center;
-		
-		> div {
-			width: 35%;
+    // form幅調整
+      @media screen and(max-width: 850px) {
+        width: 80%;
+      }
+      @media screen and(max-width: 780px) {
+        display: block;
+          width: 60%;
+      }
+      @media screen and(max-width: 500px) {
+        display: block;
+          width: 70%;
+      }
+
+      > div {
+        width: 35%;
+      // form幅調整
+      @media screen and(max-width: 1100px) {
+        width: 50%;
+      }
+      @media screen and(max-width: 780px) {
+        width: 100%;
+      }
 			
 			&:first-of-type {
-			margin-right: 5%;	
+			  margin-right: 5%;
 			}
 		}
 		
@@ -461,21 +595,26 @@ body {
 			display: block;
 			margin: 2rem 0 0.5rem 0;
 				
-				.required {
-					display: inline-block;
-					margin-left: 4px;
-					padding: 1px 4px;
-					background-color: $yellow;
-					border-radius: 5px;
-					color: $black;
-					font-size: $m * 0.7;
-					
-					&.not {
-						background-color: #ccc;
-					}
-				}
+      .required {
+        display: inline-block;
+        margin-left: 4px;
+        padding: 1px 4px;
+        background-color: $yellow;
+        border-radius: 5px;
+        color: $black;
+        font-size: $m * 0.7;
+
+        &.not {
+          background-color: #ccc;
+        }
+      }
+      
 			&:first-of-type {
 				margin-top: 0;
+        
+        @media screen and(max-width: 1100px) {
+          margin-top: 2rem;
+        }
 			}
 		}
 		
@@ -538,56 +677,10 @@ footer {
 	background-color: $black;
 	color: $white;
 	font-size: $m * 0.7;
-}
-
-/* --------------------------------
- * parts
- * -------------------------------- */
-.scrollArrow{
-  margin: 0 auto;
-  background-color: transparent;
-  width: 3rem;
-  height: 3rem;
-  border: 0.5rem solid;
-  border-color:  transparent transparent $black $black;
-  transform: rotate(-45deg);
-  animation: flash 3s linear infinite;
-  border-color:  transparent transparent $white $white;
-}
-
-@keyframes flash {
-  0% {
-    opacity: 1;
+  // 文字位置調整
+  @media screen and(max-width: 450px) {
+    padding: 1rem 0;
+    text-align: center;
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.sym {
-  width: 1rem;
-	height: 1rem;
-	stroke-width: 2;
-	margin-right: 2px;
-//	border: 1px solid white;
-//	display: inline;
-	
-	&.sym__black {
-		fill: transparent;
-		stroke: $black;
-	}
-	
-	&.sym__white {
-		fill: transparent;
-		stroke: $white;
-	}
-	
-	&.sym__yellow {
-		fill: transparent;
-		stroke: $yellow;
-	}
 }
 

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Copyright 2021 yn-nishi All Rights Reserved. */
 /* --------------------------------
  * base & common
  * -------------------------------- */
@@ -18,17 +19,21 @@
   src: url("../fonts/NotoSerifJP-Light.otf") format("opentype");
   /* SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 (http://scripts.sil.org/OFL) */ }
 
-/* line 38, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 39, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 body {
   width: 100%;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   letter-spacing: 1px; }
+  /* line 44, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  body a {
+    text-decoration: none;
+    color: inherit; }
 
-/* line 43, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 49, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 *, *::before, *::after {
   box-sizing: border-box; }
 
-/* line 46, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 52, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .clearfix::after {
   content: '';
   clear: both;
@@ -36,34 +41,52 @@ body {
   visibility: hidden;
   height: 0; }
 
-/* line 54, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 60, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .section {
   padding: 3rem 0 2.5rem; }
-  /* line 56, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 62, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .section__title {
     font-size: 1.8rem;
     text-align: center;
     padding: 4rem; }
 
 /* --------------------------------
+ * svg画像
+ * -------------------------------- */
+/* line 72, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+.sym {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+  margin-right: 2px; }
+  /* line 78, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .sym.sym__black {
+    fill: transparent;
+    stroke: #0a0a0a; }
+  /* line 83, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .sym.sym__white {
+    fill: transparent;
+    stroke: #f2f2f2; }
+  /* line 88, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .sym.sym__yellow {
+    fill: transparent;
+    stroke: #ebd842; }
+
+/* --------------------------------
  * header nav
  * -------------------------------- */
-/* line 66, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 98, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .header {
   position: fixed;
   z-index: 200;
   width: 100%;
   color: #f2f2f2;
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: rgba(10, 10, 10, 0.8);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* 背景が黒の時のheader設定 */ }
-  /* line 76, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-  .header a {
-    color: #f2f2f2;
-    text-decoration: none; }
-  /* line 81, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* body背景が黒の時のheaderスタイル */ }
+  /* line 108, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .header__logo {
     padding: 5px;
     margin-left: 1rem;
@@ -72,7 +95,7 @@ body {
     font-family: 'Akaya Telivigala', cursive;
     text-align: center;
     text-shadow: 2px 2px 0px #aaaaaa, 3px 2px 4px rgba(170, 170, 170, 0.15); }
-    /* line 90, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 117, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .header__logo__sub {
       margin: 0;
       padding: 0;
@@ -82,23 +105,43 @@ body {
       text-align: center;
       font-size: 0.8rem;
       letter-spacing: normal; }
-    /* line 101, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 620px) {
+        /* line 117, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .header__logo__sub {
+          display: inline-block;
+          margin-left: 0.5rem;
+          vertical-align: baseline;
+          font-size: 0.9rem;
+          line-height: 1; } }
+      @media screen and (max-width: 350px) {
+        /* line 117, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .header__logo__sub {
+          display: none; } }
+    /* line 140, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .header__logo:hover {
       color: #ebd842; }
-  /* line 107, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 146, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .header .gnav__menu__item {
     float: left;
     margin-right: 1rem;
     padding: 0px; }
-    /* line 112, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 151, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .header .gnav__menu__item:last-of-type {
       margin-right: 0; }
-    /* line 116, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 780px) {
+        /* line 151, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .header .gnav__menu__item:last-of-type {
+          margin-right: 2rem; } }
+    @media screen and (max-width: 620px) {
+      /* line 159, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .header .gnav__menu__item p {
+        display: none; } }
+    /* line 166, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .header .gnav__menu__item a {
       position: relative;
       display: flex;
       align-items: center; }
-      /* line 121, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 171, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .header .gnav__menu__item a::after {
         position: absolute;
         left: 50%;
@@ -109,242 +152,296 @@ body {
         background-color: #ebd842;
         transition: width 0.3s ease-in;
         transform: translateX(-50%); }
-      /* line 134, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 184, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .header .gnav__menu__item a:hover .sym {
         stroke: #ebd842;
         stroke-width: 3; }
-      /* line 139, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 189, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .header .gnav__menu__item a:hover::after {
         width: 100%; }
-  /* line 146, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 196, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .header .gnav__support {
     margin-right: 2rem;
-    pointer-events: none; }
-    /* line 150, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .header .gnav__support a {
-      display: flex;
-      align-items: center; }
-  /* line 157, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    display: flex;
+    align-items: center; }
+    @media screen and (max-width: 780px) {
+      /* line 196, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .header .gnav__support {
+        display: none; } }
+  /* line 208, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .header.scroll {
-    background-color: rgba(242, 242, 242, 0.9); }
-    /* line 159, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .header.scroll .gnav__menu__item {
-      color: #0a0a0a; }
-    /* line 163, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    color: #0a0a0a;
+    background-color: rgba(242, 242, 242, 0.8); }
+    /* line 212, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .header.scroll .sym {
       stroke: #0a0a0a;
       stroke-width: 2; }
-    /* line 168, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .header.scroll a {
-      color: #0a0a0a;
-      text-decoration: none; }
-      /* line 172, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-      .header.scroll a::after {
-        height: 3px;
-        background-color: #b4a213; }
-      /* line 177, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-      .header.scroll a:hover {
+    /* line 218, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    .header.scroll a::after {
+      height: 3px;
+      background-color: #b4a213; }
+    /* line 223, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    .header.scroll a:hover {
+      font-weight: bold; }
+      /* line 226, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .header.scroll a:hover .sym {
+        stroke: #0a0a0a;
+        stroke-width: 3;
+        fill: #ebd842; }
+      /* line 231, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .header.scroll a:hover .header__logo {
+        color: #0a0a0a;
         font-weight: bold; }
-        /* line 180, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-        .header.scroll a:hover .sym {
-          stroke: #0a0a0a;
-          stroke-width: 3;
-          fill: #ebd842; }
-        /* line 185, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-        .header.scroll a:hover .header__logo {
-          color: #0a0a0a;
-          font-weight: bold; }
 
 /* --------------------------------
  * keynote view
  * -------------------------------- */
-/* line 199, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 244, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .kv {
   padding: 0; }
-  /* line 201, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 246, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .kv__copy {
     position: absolute;
     left: 10%;
-    top: 45%;
+    top: 40%;
     font-size: 1.8rem;
     line-height: 1.5;
     font-family: 'Noto Serif JP', serif;
     color: #0a0a0a;
-    z-index: 1;
+    z-index: 10;
     text-align: center; }
-  /* line 212, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    @media screen and (max-width: 900px) {
+      /* line 246, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .kv__copy {
+        left: 5%; } }
+  /* line 261, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .kv__wrapper {
     max-width: 100%;
     overflow: hidden;
     background-color: #f2f2f2; }
-    /* line 216, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 266, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .kv__wrapper__inner {
       position: relative;
       left: 20%;
       height: 650px;
-      background: linear-gradient(to left, transparent 0%, transparent 70%, #f2f2f2 100%), url("../images/top.png");
+      background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, #f2f2f2 100%), url("../images/top.png");
       background-size: cover;
       background-repeat: no-repeat; }
+      @media screen and (max-width: 900px) {
+        /* line 266, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .kv__wrapper__inner {
+          left: 10%;
+          background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, #f2f2f2 100%), url("../images/top.png"); } }
+      @media screen and (max-width: 780px) {
+        /* line 266, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .kv__wrapper__inner {
+          left: 0;
+          background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.9) 100%), url("../images/top.png");
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-position: center; } }
 
 /* --------------------------------
  * cross section pictures
  * -------------------------------- */
-/* line 231, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 306, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .ex {
   background-color: #0a0a0a;
   color: #f2f2f2; }
-  /* line 235, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 310, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .ex p {
     padding-bottom: 3rem;
     text-align: center; }
-  /* line 239, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 315, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .ex__wrapper {
     display: flex;
     justify-content: space-evenly;
     align-items: center; }
-    /* line 244, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 320, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .ex__wrapper__box {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
       width: 50%;
       border-right: 1px solid #ebd842; }
-    /* line 252, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 900px) {
+        /* line 320, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .ex__wrapper__box {
+          border-right: none;
+          width: 70%; } }
+    /* line 333, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .ex__wrapper__magnify {
       width: 35%; }
-      /* line 255, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 900px) {
+        /* line 333, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .ex__wrapper__magnify {
+          display: none; } }
+      /* line 340, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .ex__wrapper__magnify .small img {
         width: 100%;
         max-width: 320px;
         box-shadow: 1px 1px 15px 15px #aaa; }
-      /* line 261, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 346, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .ex__wrapper__magnify p {
         padding-top: 2.5rem;
         text-align: center; }
-  /* line 269, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 354, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .ex__box {
     margin: 1rem 0;
     width: 30%; }
-    /* line 273, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    @media screen and (max-width: 900px) {
+      /* line 354, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .ex__box {
+        width: 100%; } }
+    /* line 362, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .ex__box__image {
       position: relative;
       max-width: 100%;
       max-height: 100%;
       box-shadow: 1px 1px 4px #aaaaaa;
       cursor: pointer; }
-      /* line 280, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 900px) {
+        /* line 362, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .ex__box__image {
+          cursor: unset; } }
+      /* line 373, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .ex__box__image:active {
         top: 3px;
         box-shadow: unset; }
-    /* line 286, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        @media screen and (max-width: 900px) {
+          /* line 373, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+          .ex__box__image:active {
+            top: unset;
+            box-shadow: 1px 1px 4px #aaaaaa; } }
+    /* line 384, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .ex__box__description {
       padding-top: 2rem;
       text-align: center; }
+    /* line 389, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    .ex__box p {
+      display: none; }
+      @media screen and (max-width: 900px) {
+        /* line 389, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .ex__box p {
+          display: block;
+          margin: 1rem auto 3rem;
+          padding-bottom: 0; } }
 
 /* --------------------------------
  * process
  * -------------------------------- */
-/* line 300, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 403, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .process {
   background-color: #0a0a0a;
   color: #f2f2f2; }
-  /* line 304, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 407, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .process__box {
     position: relative;
     max-width: 40%;
     margin: 3rem auto 0; }
-    /* line 310, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 412, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    .process__box:first-of-type {
+      margin: 0 auto; }
+    /* line 416, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box__inner {
       padding: 1rem;
       line-height: 1.5; }
-      /* line 314, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 420, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .process__box__inner li {
         margin-left: 1.1rem;
         color: #ebd842; }
-        /* line 318, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        /* line 424, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
         .process__box__inner li span {
           color: #f2f2f2; }
-    /* line 324, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 430, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box h3 {
       font-size: 1.3rem;
       margin: 0 0 .5em; }
-    /* line 329, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 435, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box h3:first-letter {
       font-size: 1.56rem;
       color: #ebd842; }
-    /* line 334, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 440, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box:before, .process__box:after {
       content: "";
       width: 3em;
       height: 3em;
       position: absolute; }
-    /* line 341, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 447, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box::before {
       border-top: 1px solid #ebd842;
       border-left: 1px solid #ebd842; }
-    /* line 346, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 452, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .process__box::after {
       border-bottom: 1px solid #ebd842;
       border-right: 1px solid #ebd842;
       right: 0;
       bottom: 0; }
+    @media screen and (max-width: 900px) {
+      /* line 407, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .process__box {
+        max-width: 70%; } }
 
 /* --------------------------------
  * flow
  * -------------------------------- */
-/* line 359, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 469, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .flow {
   background-color: #f2f2f2; }
-  /* line 362, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 472, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .flow__wrapper {
     display: flex;
     justify-content: center; }
-    /* line 366, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 476, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .flow__wrapper > * {
       flex-basis: 30%;
       margin: 2rem 1rem; }
-    /* line 371, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .flow__wrapper:nth-of-type(even) > .flow__imagebox {
-      order: -1; }
-  /* line 376, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-  .flow__textbox {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    /* line 381, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .flow__textbox__inner {
-      padding: 1.5em;
-      background-color: #fff;
-      border-radius: 10px; }
-    /* line 387, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .flow__textbox__num {
-      font-weight: bold;
-      font-size: 1.3rem;
-      margin-right: 0.5rem; }
-    /* line 393, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .flow__textbox__description {
-      margin-top: 1rem;
-      line-height: 1.5; }
-    /* line 399, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-    .flow__textbox__title {
-      padding: 0.1rem;
-      font-weight: bold;
-      background: linear-gradient(to right, #ebd842 0%, rgba(235, 216, 66, 0.3) 20%, transparent 80%);
-      border-radius: 5px; }
-  /* line 408, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 480, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .flow__wrapper > *:nth-of-type(even) > .flow__imagebox {
+        order: -1; }
+      @media screen and (max-width: 780px) {
+        /* line 476, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .flow__wrapper > * {
+          flex-basis: 70%;
+          margin: 2rem 1rem; } }
+  /* line 492, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .flow__textbox__inner {
+    padding: 1.5em;
+    background-color: #fff;
+    border-radius: 10px; }
+  /* line 498, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .flow__textbox__num {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-right: 0.5rem; }
+  /* line 504, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .flow__textbox__description {
+    margin-top: 1rem;
+    line-height: 1.5; }
+  /* line 509, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  .flow__textbox__title {
+    padding: 0.1rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #ebd842 0%, rgba(235, 216, 66, 0.3) 20%, rgba(255, 255, 255, 0) 80%);
+    border-radius: 5px; }
+  /* line 519, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .flow__imagebox img {
     width: 100%; }
+  @media screen and (max-width: 780px) {
+    /* line 517, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    .flow__imagebox {
+      display: none; } }
 
 /* --------------------------------
  * contact
  * -------------------------------- */
-/* line 417, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 532, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 .contact {
   background-color: #f2f2f2; }
-  /* line 420, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 535, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .contact__info {
     text-align: center; }
-  /* line 424, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 539, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .contact__tel {
     display: flex;
     align-items: center;
@@ -354,27 +451,49 @@ body {
     font-weight: bold;
     color: #ebd842;
     text-shadow: 1px 1px 0px #0a0a0a, -1px 1px 0px #0a0a0a, 1px -1px 0px #0a0a0a, -1px -1px 0px #0a0a0a, 1px 0px 0px #0a0a0a, 0px 1px 0px #0a0a0a, -1px 0px 0px #0a0a0a; }
-    /* line 441, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 556, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .contact__tel .sym.sym__black {
       margin-right: 4px;
       fill: #ebd842; }
-  /* line 446, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 561, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .contact__form {
     margin: 0 auto;
     width: 70%;
     display: flex;
     justify-content: center; }
-    /* line 452, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    @media screen and (max-width: 850px) {
+      /* line 561, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .contact__form {
+        width: 80%; } }
+    @media screen and (max-width: 780px) {
+      /* line 561, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .contact__form {
+        display: block;
+        width: 60%; } }
+    @media screen and (max-width: 500px) {
+      /* line 561, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      .contact__form {
+        display: block;
+        width: 70%; } }
+    /* line 579, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .contact__form > div {
       width: 35%; }
-      /* line 455, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      @media screen and (max-width: 1100px) {
+        /* line 579, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .contact__form > div {
+          width: 50%; } }
+      @media screen and (max-width: 780px) {
+        /* line 579, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        .contact__form > div {
+          width: 100%; } }
+      /* line 589, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .contact__form > div:first-of-type {
         margin-right: 5%; }
-    /* line 460, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    /* line 594, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .contact__form label {
       display: block;
       margin: 2rem 0 0.5rem 0; }
-      /* line 464, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 598, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .contact__form label .required {
         display: inline-block;
         margin-left: 4px;
@@ -383,33 +502,37 @@ body {
         border-radius: 5px;
         color: #0a0a0a;
         font-size: 0.7rem; }
-        /* line 473, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        /* line 607, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
         .contact__form label .required.not {
           background-color: #ccc; }
-      /* line 477, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 612, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .contact__form label:first-of-type {
         margin-top: 0; }
-    /* line 482, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+        @media screen and (max-width: 1100px) {
+          /* line 612, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+          .contact__form label:first-of-type {
+            margin-top: 2rem; } }
+    /* line 621, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
     .contact__form__input {
       padding: 0.5rem;
       border: 1px solid #aaa;
       border-radius: 5px;
       background-color: #fff; }
-      /* line 488, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+      /* line 627, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
       .contact__form__input.comment {
         height: 19rem;
         overflow-y: auto; }
-  /* line 494, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 633, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .contact .errMsg {
     padding: 3px;
     color: crimson; }
-  /* line 498, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 637, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   .contact .sendMsg {
     text-align: center;
     margin-top: 1rem;
     height: 1rem; }
 
-/* line 504, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 643, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 #ajax {
   display: block;
   position: relative;
@@ -423,70 +546,33 @@ body {
   border: 1px solid #0a0a0a;
   border-radius: 5px;
   box-shadow: 1px 1px 1px #0a0a0a; }
-  /* line 517, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 656, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   #ajax:hover {
     background-color: #ebd842; }
-  /* line 520, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 659, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   #ajax:active {
     border: 1px solid #0a0a0a;
     top: 2px;
     box-shadow: unset;
     background-color: rgba(235, 216, 66, 0.3); }
-  /* line 526, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+  /* line 665, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
   #ajax:disabled {
     background-color: unset; }
 
 /* --------------------------------
  * footer
  * -------------------------------- */
-/* line 535, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+/* line 674, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
 footer {
   text-align: right;
   padding: 1rem 4rem;
   background-color: #0a0a0a;
   color: #f2f2f2;
   font-size: 0.7rem; }
-
-/* --------------------------------
- * parts
- * -------------------------------- */
-/* line 546, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-.scrollArrow {
-  margin: 0 auto;
-  background-color: transparent;
-  width: 3rem;
-  height: 3rem;
-  border: 0.5rem solid;
-  border-color: transparent transparent #0a0a0a #0a0a0a;
-  transform: rotate(-45deg);
-  animation: flash 3s linear infinite;
-  border-color: transparent transparent #f2f2f2 #f2f2f2; }
-
-@keyframes flash {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-/* line 570, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-.sym {
-  width: 1rem;
-  height: 1rem;
-  stroke-width: 2;
-  margin-right: 2px; }
-  /* line 578, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-  .sym.sym__black {
-    fill: transparent;
-    stroke: #0a0a0a; }
-  /* line 583, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-  .sym.sym__white {
-    fill: transparent;
-    stroke: #f2f2f2; }
-  /* line 588, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
-  .sym.sym__yellow {
-    fill: transparent;
-    stroke: #ebd842; }
+  @media screen and (max-width: 450px) {
+    /* line 674, /Users/yuichi_nishi/01_dev/04_psh/css/index.scss */
+    footer {
+      padding: 1rem 0;
+      text-align: center; } }
 
 /*# sourceMappingURL=index.css.map */
