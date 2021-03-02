@@ -1,0 +1,15 @@
+{
+  "name": "04_psh",
+  "version": "1.0.0",
+  "description": "https://yn-nishi.github.io/psh/",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass css/index.scss css/index.css --output-style expanded"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

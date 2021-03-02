@@ -443,6 +443,7 @@ body {
 			height: 3em;
 			position: absolute;
 		}
+    
 		
 		&::before {
 			border-top: 1px solid $yellow;
@@ -455,6 +456,7 @@ body {
 			right: 0;
 			bottom: 0;
 		}
+    
     
     @media screen and(max-width: 900px) {
       max-width: 70%;
